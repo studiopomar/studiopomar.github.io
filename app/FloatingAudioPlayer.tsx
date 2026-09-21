@@ -90,7 +90,7 @@ export default function FloatingAudioPlayer({
             <span />
           </div>
         </div>
-        <p className="floating-player-meta">{activeVoice?.meta || 'Studio POMAR'}</p>
+        <p className="floating-player-meta">{activeVoice?.meta || 'Studio Pomar'}</p>
       </div>
 
       {/* Progress & Time Indicator */}

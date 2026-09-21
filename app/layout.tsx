@@ -8,15 +8,15 @@ import { ThemeProvider } from './ThemeContext';
 import BackToTop from './BackToTop';
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
-const siteUrl = 'https://studiopomar.github.io/pomar-lts';
+const siteUrl = 'https://studiopomar.github.io';
 const ogImageUrl = `${siteUrl}/studio-pomar-icon-4096.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'Studio POMAR | Vozes que criam raízes',
+  title: 'Studio Pomar | Vozes que criam raízes',
   description: 'Coletivo de voicebanks e ferramentas livres para UTAU e OpenUTAU. Vozes brasileiras e tecnologia aberta em síntese vocal.',
   keywords: [
-    'Studio POMAR',
+    'Studio Pomar',
     'POMAR',
     'UTAU Brasil',
     'OpenUTAU',
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     'Síntese vocal',
     'VSynth BR'
   ],
-  authors: [{ name: 'Studio POMAR', url: 'https://github.com/studiopomar' }],
-  creator: 'Studio POMAR',
-  publisher: 'Studio POMAR',
+  authors: [{ name: 'Studio Pomar', url: 'https://github.com/studiopomar' }],
+  creator: 'Studio Pomar',
+  publisher: 'Studio Pomar',
   alternates: {
     canonical: '/',
   },
@@ -64,16 +64,16 @@ export const metadata: Metadata = {
     shortcut: `${basePath}/studio-pomar-icon-4096.png`,
   },
   openGraph: {
-    title: 'Studio POMAR | Vozes que criam raízes',
+    title: 'Studio Pomar | Vozes que criam raízes',
     description: 'Coletivo de voicebanks e ferramentas livres para UTAU e OpenUTAU. Feito pela comunidade, para a comunidade.',
     url: siteUrl,
-    siteName: 'Studio POMAR',
+    siteName: 'Studio Pomar',
     images: [
       {
         url: ogImageUrl,
         width: 800,
         height: 800,
-        alt: 'Studio POMAR — Vozes que criam raízes',
+        alt: 'Studio Pomar (Vozes que criam raízes)',
         type: 'image/png',
       },
     ],
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Studio POMAR | Vozes que criam raízes',
+    title: 'Studio Pomar | Vozes que criam raízes',
     description: 'Coletivo de voicebanks e ferramentas livres para UTAU e OpenUTAU.',
     images: [ogImageUrl],
   },
@@ -94,7 +94,7 @@ const jsonLd = {
     {
       '@type': 'Organization',
       '@id': `${siteUrl}/#organization`,
-      name: 'Studio POMAR',
+      name: 'Studio Pomar',
       url: siteUrl,
       logo: ogImageUrl,
       image: ogImageUrl,
@@ -111,7 +111,7 @@ const jsonLd = {
       '@type': 'WebSite',
       '@id': `${siteUrl}/#website`,
       url: siteUrl,
-      name: 'Studio POMAR | Vozes que criam raízes',
+      name: 'Studio Pomar | Vozes que criam raízes',
       publisher: {
         '@id': `${siteUrl}/#organization`,
       },
@@ -140,7 +140,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        {/* Inline script to set theme before hydration — prevents FOUC */}
+        {/* Inline script to set theme before hydration */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('studio_pomar_theme');if(t==='summer'||t==='autumn'||t==='night'){document.documentElement.setAttribute('data-theme',t);}else{document.documentElement.setAttribute('data-theme','summer');}}catch(e){}})();`,

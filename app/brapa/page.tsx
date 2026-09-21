@@ -162,7 +162,7 @@ export default function BrapaFullPage() {
     <main className="brapa-page">
       <header className="nav-wrapper">
         <nav className="nav shell" aria-label="Navegação principal">
-          <a className="brand" href={`${basePath}/`} aria-label="Studio POMAR, início">
+          <a className="brand" href={`${basePath}/`} aria-label="Studio Pomar, início">
             <span className="brand-mark">
               <img src={`${basePath}/studio-pomar-icon.png`} alt="Logo Studio Pomar" />
             </span>

@@ -40,7 +40,7 @@ jobs:
       - name: Gerar site estático
         run: pnpm exec next build
         env:
-          NEXT_PUBLIC_BASE_PATH: /pomar-lts
+          NEXT_PUBLIC_BASE_PATH: ""
 
       - name: Desativar Jekyll
         run: touch out/.nojekyll
