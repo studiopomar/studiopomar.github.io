@@ -5,7 +5,7 @@
 # Studio POMAR
 ### *Vozes que criam raízes · Síntese Vocal Livre & Comunitária*
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Site-d7ff3f?style=flat-square&logo=github&logoColor=171815)](https://studiopomar.github.io/pomar-lts/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Site-d7ff3f?style=flat-square&logo=github&logoColor=171815)](https://studiopomar.github.io/)
 [![Next.js](https://img.shields.io/badge/Next.js-16.2-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v4-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
@@ -13,7 +13,7 @@
 
 <br />
 
-[Português](#sobre-o-studio-pomar) • [English](#sobre-o-studio-pomar) • [العربية](#sobre-o-studio-pomar) • [Русский](#sobre-o-studio-pomar) • [日本語](#sobre-o-studio-pomar)
+[Leia em português](#sobre-o-studio-pomar)
 
 <br />
 
@@ -38,6 +38,10 @@ Nascido da convicção de que a tecnologia de voz não deve ser um recurso dista
 | **EDDIE** | 4ª Geração · desde 2012 | UTAU, OpenUTAU, SVV | Português Brasileiro (Pioneiro), Japonês |
 | **MIZUKI** *(観月)* | 7ª Geração · desde 2015 | UTAU, OpenUTAU, DiffSinger | Português, Japonês, Inglês |
 | **LLANE CROW** | Internacional · Rússia | UTAU, OpenUTAU, DiffSinger, Neural Synth | Russo, Inglês, Japonês |
+| **KODAMA KITO** | 18ª Geração · desde 2026 | UTAU, OpenUTAU | Português, Japonês, Inglês |
+| **APOLLYO XII** | 17ª Geração · desde 2025 | UTAU, OpenUTAU | Japonês (CV e CVVC Bipitch) |
+
+Veja as [páginas completas das vozes](https://studiopomar.github.io/#vozes) ou acesse diretamente [VIICTOR](https://studiopomar.github.io/vozes/viictor/), [YOHJI](https://studiopomar.github.io/vozes/yohji/), [EDDIE](https://studiopomar.github.io/vozes/eddie/), [MIZUKI](https://studiopomar.github.io/vozes/mizuki/), [LLANE CROW](https://studiopomar.github.io/vozes/llane-crow/), [KODAMA KITO](https://studiopomar.github.io/vozes/kodama-kito/) e [APOLLYO XII](https://studiopomar.github.io/vozes/apollyo/).
 
 ---
 
@@ -46,6 +50,10 @@ Nascido da convicção de que a tecnologia de voz não deve ser um recurso dista
 - **[KAMAFEU](https://github.com/studiopomar/kamafeu)**: Sintetizador concatenativo multifaixa e piano roll em Rust, com processamento DSP nativo de alta fidelidade e controle de afinação artesanal.
 - **[COPAÍBA NEO](https://github.com/studiopomar/Copaiba-NEO)**: Nova geração de editores de `oto.ini` multiplataforma em Rust com gravação de áudio embutida, seleção múltipla e plugins inteligentes de consistência.
 - **[COPAÍBA LEXIKON LTS](https://github.com/studiopomar/Copaiba-Lexicon-LTS)**: Editor de `oto.ini` estável em Python com análise detalhada de forma de onda, mini-mapa, presets customizáveis e processamento em lote.
+
+Consulte as [páginas das ferramentas e downloads](https://studiopomar.github.io/#ferramentas): [KAMAFEU](https://studiopomar.github.io/ferramentas/kamafeu/), [COPAÍBA NEO](https://studiopomar.github.io/ferramentas/copaiba-neo/) e [COPAIBA LEXIKON LTS](https://studiopomar.github.io/ferramentas/copaiba-lexicon/).
+
+O site também oferece o guia [BRAPA de fonética para português brasileiro](https://studiopomar.github.io/brapa/) e o manifesto [O Ritmo da Terra](https://studiopomar.github.io/o-ritmo-da-terra/).
 
 ---
 
@@ -66,8 +74,8 @@ Para rodar o projeto localmente em seu ambiente de desenvolvimento:
 
 ```bash
 # 1. Clonar o repositório
-git clone https://github.com/studiopomar/pomar-lts.git
-cd pomar-lts
+git clone https://github.com/studiopomar/studiopomar.github.io.git
+cd studiopomar.github.io
 
 # 2. Instalar as dependências (pnpm recomendado)
 pnpm install
@@ -91,11 +99,14 @@ O build estático pronto para publicação será gerado na pasta `out/`.
 ## Estrutura do Projeto
 
 ```text
-pomar-lts/
+studiopomar.github.io/
 ├── app/
+│   ├── brapa/                   # Guia BRAPA e metadados próprios da página
+│   ├── ferramentas/[slug]/      # Páginas estáticas de ferramentas
 │   ├── i18n/
 │   │   └── translations.ts      # Dicionário de conteúdo multilíngue (PT, EN, AR, RU, JA)
 │   ├── o-ritmo-da-terra/        # Página dedicada do Manifesto
+│   ├── vozes/[slug]/            # Páginas estáticas de voicebanks
 │   ├── BackToTop.tsx            # Botão flutuante de retorno ao topo
 │   ├── LanguageContext.tsx      # Context Provider de idiomas e direção (LTR/RTL)
 │   ├── LanguageSelector.tsx     # Dropdown estilizado no topo com microinterações
@@ -108,8 +119,12 @@ pomar-lts/
 │   ├── layout.tsx               # Root layout com metadata, OpenGraph e JSON-LD
 │   └── page.tsx                 # Página principal
 ├── public/                      # Imagens, samples de áudio e ícones
+│   ├── robots.txt               # Regras de rastreamento e endereço do sitemap
+│   └── sitemap.xml              # URLs canônicas das páginas públicas
 └── .github/workflows/pages.yml  # Pipeline de CI/CD para deploy no GitHub Pages
 ```
+
+As páginas de vozes, ferramentas, BRAPA e manifesto são exportadas como HTML estático com títulos e descrições próprios. O sitemap lista a home, essas páginas e os URLs canônicos para rastreamento.
 
 ---
 
