@@ -170,6 +170,7 @@ export default function BrapaFullPage() {
           </a>
           <div className="nav-links">
             <a href={`${basePath}/#top`}>{t.nav.home}</a>
+            <a href={`${basePath}/novidades/`}>{t.nav.news}</a>
             <a href={`${basePath}/#vozes`}>{t.nav.voices}</a>
             <a href={`${basePath}/#ferramentas`}>{t.nav.tools}</a>
             <a href={`${basePath}/brapa/`} style={{ textDecoration: 'underline', textUnderlineOffset: '5px' }}>{t.nav.phonetics}</a>

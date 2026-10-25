@@ -4,6 +4,7 @@ import React from 'react';
 import VoiceStack from './VoiceStack';
 import VoiceProfiles from './VoiceProfiles';
 import ToolProfiles from './ToolProfiles';
+import FeaturedCarousel from './FeaturedCarousel';
 import { SoundToggle } from './SoundEffects';
 import LanguageSelector from './LanguageSelector';
 import ThemeSelector from './ThemeSelector';
@@ -37,6 +38,7 @@ export default function Home() {
           </a>
           <div className="nav-links">
             <a href="#top">{t.nav.home}</a>
+            <a href={`${basePath}/novidades/`}>{t.nav.news}</a>
             <a href="#vozes">{t.nav.voices}</a>
             <a href="#ferramentas">{t.nav.tools}</a>
             <a href={`${basePath}/brapa/`}>{t.nav.phonetics}</a>
@@ -53,46 +55,7 @@ export default function Home() {
 
       <section className="hero shell" id="top">
         <div className="hero-copy">
-          <div className="spotlight-card">
-            <div className="spotlight-header">
-              <div className="spotlight-badge">
-                <span className="spotlight-dot" />
-                <span>{t.hero.spotlightBadge}</span>
-              </div>
-              <span className="spotlight-version">{t.hero.spotlightVersion}</span>
-            </div>
-
-            <div className="spotlight-content">
-              <a 
-                href="https://github.com/studiopomar/kamafeu" 
-                target="_blank" 
-                rel="noreferrer"
-                className="spotlight-preview"
-                aria-label="Abrir repositório do Kamafeu no GitHub"
-              >
-                <img src={`${basePath}/kamafeu.png`} alt="Interface do Kamafeu" />
-                <div className="spotlight-preview-overlay">
-                  <span>{t.hero.spotlightOpen}</span>
-                </div>
-              </a>
-
-              <div className="spotlight-details">
-                <div className="spotlight-title-row">
-                  <h3>{t.hero.spotlightTitle}</h3>
-                  <span className="spotlight-category">{t.hero.spotlightCategory}</span>
-                </div>
-                <p>{t.hero.spotlightDesc}</p>
-                <div className="spotlight-actions">
-                  <a href="https://github.com/studiopomar/kamafeu" target="_blank" rel="noreferrer" className="spotlight-btn-primary">
-                    {t.hero.spotlightSource}
-                  </a>
-                  <a href="#ferramentas" className="spotlight-btn-ghost">
-                    {t.hero.spotlightTools}
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <FeaturedCarousel />
 
           <p className="eyebrow">{t.hero.eyebrow}</p>
           <h1>{t.hero.titleMain}<br /><em>{t.hero.titleEm}</em></h1>
@@ -173,6 +136,7 @@ export default function Home() {
               <p>{t.footer.content}</p>
               <a href={`${basePath}/brapa/`}>{t.nav.phonetics}</a>
               <a href={`${basePath}/o-ritmo-da-terra/`}>{t.nav.manifesto}</a>
+              <a href={`${basePath}/novidades/`}>{t.nav.news}</a>
               <a href="#top">{t.footer.backToTop}</a>
             </div>
           </div>

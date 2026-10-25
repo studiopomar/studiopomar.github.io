@@ -53,6 +53,7 @@ export interface TranslationSchema {
     phonetics: string;
     quickstart: string;
     manifesto: string;
+    news: string;
     github: string;
   };
   hero: {
@@ -182,6 +183,23 @@ export interface TranslationSchema {
   projects: ProjectItem[];
 }
 
+export interface NewsCopy {
+  eyebrow: string;
+  title: string;
+  description: string;
+  backHome: string;
+  announcementBadge: string;
+  comingSoon: string;
+  imageAlt: string;
+  cardCategory: string;
+  cardDescription: string;
+  cardAction: string;
+  previousCard: string;
+  nextCard: string;
+  bottomline: string;
+  voicesLink: string;
+}
+
 export const translations: Record<Language, TranslationSchema> = {
   pt: {
     nav: {
@@ -191,6 +209,7 @@ export const translations: Record<Language, TranslationSchema> = {
       phonetics: 'BRAPA',
       quickstart: 'Como Começar',
       manifesto: 'O Ritmo da Terra',
+      news: 'Novidades',
       github: 'GitHub ↗',
     },
     hero: {
@@ -579,6 +598,7 @@ export const translations: Record<Language, TranslationSchema> = {
       phonetics: 'BRAPA',
       quickstart: 'Getting Started',
       manifesto: 'The Rhythm of the Earth',
+      news: 'News',
       github: 'GitHub ↗',
     },
     hero: {
@@ -950,6 +970,7 @@ export const translations: Record<Language, TranslationSchema> = {
       phonetics: 'BRAPA',
       quickstart: 'كيفية البدء',
       manifesto: 'إيقاع الأرض',
+      news: 'الأخبار',
       github: 'GitHub ↗',
     },
     hero: {
@@ -1338,6 +1359,7 @@ export const translations: Record<Language, TranslationSchema> = {
       phonetics: 'BRAPA',
       quickstart: 'С чего начать',
       manifesto: 'Ритм Земли',
+      news: 'Новости',
       github: 'GitHub ↗',
     },
     hero: {
@@ -1726,6 +1748,7 @@ export const translations: Record<Language, TranslationSchema> = {
       phonetics: 'BRAPA',
       quickstart: 'はじめに',
       manifesto: '大地の鼓動 (マニフェスト)',
+      news: 'お知らせ',
       github: 'GitHub ↗',
     },
     hero: {
@@ -2104,5 +2127,88 @@ export const translations: Record<Language, TranslationSchema> = {
         },
       },
     ],
+  },
+};
+
+export const newsTranslations: Record<Language, NewsCopy> = {
+  pt: {
+    eyebrow: 'EM BREVE NO POMAR',
+    title: 'Raphaello',
+    description: 'Uma nova voz está chegando ao Pomar. Em breve.',
+    backHome: 'Voltar ao Pomar',
+    announcementBadge: 'PRÓXIMO ANÚNCIO',
+    comingSoon: 'EM BREVE',
+    imageAlt: 'Raphaello, nova voz anunciada pelo Studio Pomar',
+    cardCategory: 'Uma nova voz',
+    cardDescription: 'Raphaello está a caminho. Conheça o primeiro vislumbre na página de novidades.',
+    cardAction: 'Ver novidade ↗',
+    previousCard: 'Card anterior',
+    nextCard: 'Próximo card',
+    bottomline: 'UMA NOVA SEMENTE, UM NOVO SOM',
+    voicesLink: 'Conheça as vozes',
+  },
+  en: {
+    eyebrow: 'COMING SOON TO THE ORCHARD',
+    title: 'Raphaello',
+    description: 'A new voice is coming to Studio Pomar. Coming soon.',
+    backHome: 'Back to the orchard',
+    announcementBadge: 'UP NEXT',
+    comingSoon: 'COMING SOON',
+    imageAlt: 'Raphaello, a new voice announced by Studio Pomar',
+    cardCategory: 'A new voice',
+    cardDescription: 'Raphaello is on the way. Get the first glimpse on the news page.',
+    cardAction: 'See the announcement ↗',
+    previousCard: 'Previous card',
+    nextCard: 'Next card',
+    bottomline: 'A NEW SEED, A NEW SOUND',
+    voicesLink: 'Meet the voices',
+  },
+  ar: {
+    eyebrow: 'قريبًا في بستان بومار',
+    title: 'Raphaello',
+    description: 'صوت جديد قادم إلى Studio Pomar. قريبًا.',
+    backHome: 'العودة إلى البستان',
+    announcementBadge: 'الإعلان القادم',
+    comingSoon: 'قريبًا',
+    imageAlt: 'Raphaello، صوت جديد يعلنه Studio Pomar',
+    cardCategory: 'صوت جديد',
+    cardDescription: 'Raphaello في الطريق. شاهدوا أول لمحة في صفحة الأخبار.',
+    cardAction: 'اكتشف الإعلان ↗',
+    previousCard: 'البطاقة السابقة',
+    nextCard: 'البطاقة التالية',
+    bottomline: 'بذرة جديدة، وصوت جديد',
+    voicesLink: 'اكتشفوا الأصوات',
+  },
+  ru: {
+    eyebrow: 'СКОРО В САДУ POMAR',
+    title: 'Raphaello',
+    description: 'В Studio Pomar приходит новый голос. Скоро.',
+    backHome: 'Назад в сад',
+    announcementBadge: 'СЛЕДУЮЩАЯ НОВОСТЬ',
+    comingSoon: 'СКОРО',
+    imageAlt: 'Raphaello, новый голос, анонсированный Studio Pomar',
+    cardCategory: 'Новый голос',
+    cardDescription: 'Raphaello уже в пути. Первый взгляд — на странице новостей.',
+    cardAction: 'Смотреть анонс ↗',
+    previousCard: 'Предыдущая карточка',
+    nextCard: 'Следующая карточка',
+    bottomline: 'НОВОЕ СЕМЯ — НОВОЕ ЗВУЧАНИЕ',
+    voicesLink: 'Открыть каталог голосов',
+  },
+  ja: {
+    eyebrow: 'まもなくPomarに登場',
+    title: 'Raphaello',
+    description: 'Studio Pomarに新しい歌声がやってきます。近日公開。',
+    backHome: 'Pomarのホームへ戻る',
+    announcementBadge: '次のお知らせ',
+    comingSoon: '近日公開',
+    imageAlt: 'Studio Pomarが発表する新しい歌声、Raphaello',
+    cardCategory: '新しい歌声',
+    cardDescription: 'Raphaelloがまもなく登場。ニュースページで最初の姿をご覧ください。',
+    cardAction: 'お知らせを見る ↗',
+    previousCard: '前のカード',
+    nextCard: '次のカード',
+    bottomline: '新しい種、新しい歌声',
+    voicesLink: '音源を見る',
   },
 };
