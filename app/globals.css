@@ -4225,6 +4225,12 @@ footer { background: #bacb4c; padding: 100px 0 25px; }
   width: 100%;
   max-height: min(82svh, 820px);
   object-fit: contain;
+  animation: newsFloat 8s ease-in-out infinite;
+}
+
+@keyframes newsFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
 .news-art-orbit { position: absolute; z-index: 0; width: 9px; height: 9px; border-radius: 50%; background: #ffe2a3; box-shadow: 0 0 20px 5px rgba(255, 226, 163, .4); }
