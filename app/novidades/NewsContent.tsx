@@ -29,6 +29,26 @@ export default function NewsContent() {
   const { t, language, dir } = useLanguage();
   const copy = newsTranslations[language];
 
+  const handleArtPointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
+    if ((event.pointerType !== 'mouse' && event.pointerType !== 'touch') || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+    const strength = event.pointerType === 'touch' ? 4 : 7;
+    const haloStrength = event.pointerType === 'touch' ? 14 : 24;
+    event.currentTarget.style.setProperty('--parallax-x', `${(x * strength).toFixed(2)}deg`);
+    event.currentTarget.style.setProperty('--parallax-y', `${(-y * strength).toFixed(2)}deg`);
+    event.currentTarget.style.setProperty('--halo-x', `${(x * haloStrength).toFixed(1)}px`);
+    event.currentTarget.style.setProperty('--halo-y', `${(y * haloStrength).toFixed(1)}px`);
+  };
+
+  const resetArtPointer = (event: React.PointerEvent<HTMLDivElement>) => {
+    event.currentTarget.style.setProperty('--parallax-x', '0deg');
+    event.currentTarget.style.setProperty('--parallax-y', '0deg');
+    event.currentTarget.style.setProperty('--halo-x', '0px');
+    event.currentTarget.style.setProperty('--halo-y', '0px');
+  };
+
   return (
     <main className="news-page" dir={dir}>
       <header className="nav-wrapper">
@@ -65,7 +85,7 @@ export default function NewsContent() {
           <div className="news-signature"><span>01</span><span>VOZES QUE CRIAM RAÍZES</span><span className="news-mark-star" aria-hidden="true" /></div>
         </div>
 
-        <div className="news-art-wrap">
+        <div className="news-art-wrap" onPointerMove={handleArtPointerMove} onPointerLeave={resetArtPointer} onPointerUp={resetArtPointer} onPointerCancel={resetArtPointer}>
           <div className="news-particle-layer news-particles-back" aria-hidden="true">
             {backParticles.map((particle, index) => (
               <span
