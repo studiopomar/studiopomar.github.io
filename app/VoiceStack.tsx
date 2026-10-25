@@ -13,6 +13,7 @@ export default function VoiceStack({ voices }: VoiceStackProps) {
   const { language } = useLanguage();
   const [isHovered, setIsHovered] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
+  const [isHydrated, setIsHydrated] = useState(false);
   const { playCardSelect, playWhoosh } = useSound();
   
   const trackRef = useRef<HTMLDivElement>(null);
@@ -23,13 +24,17 @@ export default function VoiceStack({ voices }: VoiceStackProps) {
   const dragStartPosRef = useRef<number>(0);
   const hasMovedRef = useRef<boolean>(false);
 
-  // Replicate array to make infinite seamless track
-  const repeatedVoices = [...voices, ...voices, ...voices, ...voices];
+  // Keep the static HTML concise for crawlers; add visual loop copies after hydration.
+  const repeatedVoices = isHydrated ? [...voices, ...voices, ...voices, ...voices] : voices;
 
   // Card dimensions for calculation
   const cardWidth = 250;
   const cardGap = 22;
   const singleSetWidth = voices.length * (cardWidth + cardGap);
+
+  useEffect(() => {
+    setIsHydrated(true);
+  }, []);
 
   useEffect(() => {
     let lastTimestamp = performance.now();
@@ -218,6 +223,7 @@ export default function VoiceStack({ voices }: VoiceStackProps) {
               <article 
                 className="pokemon-card"
                 key={`${voice.name}-${idx}`}
+                aria-hidden={idx >= voices.length ? true : undefined}
                 style={{ 
                   '--accent': voice.accent,
                 } as React.CSSProperties}
@@ -235,7 +241,7 @@ export default function VoiceStack({ voices }: VoiceStackProps) {
                   </div>
                   
                   <div className="card-image-container">
-                    <img src={voice.image} alt={`Arte de ${voice.name}`} draggable="false" />
+                    <img src={voice.image} alt={`Arte de ${voice.name}`} draggable="false" loading={idx < 2 ? 'eager' : 'lazy'} decoding="async" />
                     <div className="voice-card-shine" />
                   </div>
                   

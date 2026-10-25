@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://studiopomar.github.io/pomar-lts/</loc>
-    <lastmod>2026-08-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://studiopomar.github.io/pomar-lts/o-ritmo-da-terra/</loc>
-    <lastmod>2026-08-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <url><loc>https://studiopomar.github.io/</loc></url>
+  <url><loc>https://studiopomar.github.io/brapa/</loc></url>
+  <url><loc>https://studiopomar.github.io/o-ritmo-da-terra/</loc></url>
+  <url><loc>https://studiopomar.github.io/vozes/viictor/</loc></url>
+  <url><loc>https://studiopomar.github.io/vozes/yohji/</loc></url>
+  <url><loc>https://studiopomar.github.io/vozes/eddie/</loc></url>
+  <url><loc>https://studiopomar.github.io/vozes/mizuki/</loc></url>
+  <url><loc>https://studiopomar.github.io/vozes/llane-crow/</loc></url>
+  <url><loc>https://studiopomar.github.io/vozes/kodama-kito/</loc></url>
+  <url><loc>https://studiopomar.github.io/vozes/apollyo/</loc></url>
+  <url><loc>https://studiopomar.github.io/ferramentas/kamafeu/</loc></url>
+  <url><loc>https://studiopomar.github.io/ferramentas/copaiba-neo/</loc></url>
+  <url><loc>https://studiopomar.github.io/ferramentas/copaiba-lexicon/</loc></url>
 </urlset>

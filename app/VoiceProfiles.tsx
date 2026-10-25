@@ -7,6 +7,8 @@ import { VoiceItem } from './i18n/translations';
 import FloatingAudioPlayer from './FloatingAudioPlayer';
 import { CloseIcon, LeafIcon, PlayIcon, PauseIcon } from './Icons';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 interface VoiceProfilesProps {
   voices: VoiceItem[];
 }
@@ -541,7 +543,7 @@ export default function VoiceProfiles({ voices }: VoiceProfilesProps) {
                   aria-label={`${t.voicesSection.viewDetails}: ${voice.name}`}
                 >
                   <span>0{idx + 1}</span>
-                  <img src={voice.image} alt={voice.name} />
+                  <img src={voice.image} alt={voice.name} loading="lazy" decoding="async" />
                   <div className="profile-image-hover-indicator">
                     <span>{t.voicesSection.viewDetails}</span>
                   </div>
@@ -578,6 +580,7 @@ export default function VoiceProfiles({ voices }: VoiceProfilesProps) {
                     >
                       {t.voicesSection.viewDetails}
                     </button>
+                    <a href={`${basePath}/vozes/${voice.id}/`}>Página completa ↗</a>
                     <a href={voice.owner} target="_blank" rel="noreferrer">
                       {t.voicesSection.modal.creatorChannel}: {voice.ownerName}
                     </a>

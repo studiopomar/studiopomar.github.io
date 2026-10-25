@@ -13,6 +13,8 @@ import {
   CloseIcon,
 } from './Icons';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 interface ToolProfilesProps {
   projects: ProjectItem[];
 }
@@ -78,7 +80,7 @@ export default function ToolProfiles({ projects }: ToolProfilesProps) {
               onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleOpenModal(project); }}
               aria-label={`${t.toolsSection.viewDetails}: ${project.name}`}
             >
-              <img src={project.image} alt={`Interface do ${project.name}`} />
+              <img src={project.image} alt={`Interface do ${project.name}`} loading="lazy" decoding="async" />
               <div className="project-card-image-overlay" />
               <span className="project-card-badge">{project.index}</span>
               <span className="project-card-version-badge">{project.version}</span>
@@ -130,6 +132,7 @@ export default function ToolProfiles({ projects }: ToolProfilesProps) {
                 >
                   {t.toolsSection.viewDetails}
                 </button>
+                <a className="project-details-btn" href={`${basePath}/ferramentas/${project.id}/`}>Página completa ↗</a>
 
                 <div className="project-quick-os-badges">
                   {project.downloads?.windows && (

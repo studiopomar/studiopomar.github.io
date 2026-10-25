@@ -9,35 +9,12 @@ import BackToTop from './BackToTop';
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 const siteUrl = 'https://studiopomar.github.io';
-const ogImageUrl = `${siteUrl}/studio-pomar-icon-4096.png`;
+const ogImageUrl = `${siteUrl}/og.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'Studio Pomar | Vozes que criam raízes',
-  description: 'Coletivo de voicebanks e ferramentas livres para UTAU e OpenUTAU. Vozes brasileiras e tecnologia aberta em síntese vocal.',
-  keywords: [
-    'Studio Pomar',
-    'POMAR',
-    'UTAU Brasil',
-    'OpenUTAU',
-    'DiffSinger',
-    'Sintetizador de voz',
-    'Voicebanks brasileiros',
-    'Kamafeu',
-    'VIICTOR',
-    'YOHJI',
-    'EDDIE',
-    'LLANE CROW',
-    'MIZUKI',
-    'Kodama Kito',
-    'Kito',
-    'Apollyo XII',
-    'Apollyo',
-    'Vocaloid Brasil',
-    'Software livre de áudio',
-    'Síntese vocal',
-    'VSynth BR'
-  ],
+  title: 'Studio Pomar | Voicebanks brasileiros e ferramentas para UTAU',
+  description: 'Conheça voicebanks brasileiros para UTAU e OpenUTAU e ferramentas livres de síntese vocal, como Kamafeu, Copaíba NEO e Lexikon LTS.',
   authors: [{ name: 'Studio Pomar', url: 'https://github.com/studiopomar' }],
   creator: 'Studio Pomar',
   publisher: 'Studio Pomar',
@@ -64,16 +41,16 @@ export const metadata: Metadata = {
     shortcut: `${basePath}/studio-pomar-icon-4096.png`,
   },
   openGraph: {
-    title: 'Studio Pomar | Vozes que criam raízes',
-    description: 'Coletivo de voicebanks e ferramentas livres para UTAU e OpenUTAU. Feito pela comunidade, para a comunidade.',
+    title: 'Studio Pomar | Voicebanks brasileiros e ferramentas para UTAU',
+    description: 'Vozes brasileiras e ferramentas livres para UTAU, OpenUTAU e síntese vocal. Feito pela comunidade, para a comunidade.',
     url: siteUrl,
     siteName: 'Studio Pomar',
     images: [
       {
         url: ogImageUrl,
-        width: 800,
-        height: 800,
-        alt: 'Studio Pomar (Vozes que criam raízes)',
+        width: 1200,
+        height: 630,
+        alt: 'Studio Pomar: voicebanks brasileiros e ferramentas livres de síntese vocal',
         type: 'image/png',
       },
     ],
@@ -82,8 +59,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Studio Pomar | Vozes que criam raízes',
-    description: 'Coletivo de voicebanks e ferramentas livres para UTAU e OpenUTAU.',
+    title: 'Studio Pomar | Voicebanks brasileiros e ferramentas para UTAU',
+    description: 'Vozes brasileiras e ferramentas livres para UTAU, OpenUTAU e síntese vocal.',
     images: [ogImageUrl],
   },
 };
@@ -111,7 +88,7 @@ const jsonLd = {
       '@type': 'WebSite',
       '@id': `${siteUrl}/#website`,
       url: siteUrl,
-      name: 'Studio Pomar | Vozes que criam raízes',
+      name: 'Studio Pomar | Voicebanks brasileiros e ferramentas para UTAU',
       publisher: {
         '@id': `${siteUrl}/#organization`,
       },

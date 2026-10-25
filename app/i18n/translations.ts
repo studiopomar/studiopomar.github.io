@@ -212,7 +212,7 @@ export const translations: Record<Language, TranslationSchema> = {
     ticker: 'UTAU ✶ OPENUTAU ✶ SOFTWARE LIVRE ✶ VOZES BRASILEIRAS ✶ LONG-TERM SUPPORT ✶ UTAU ✶ OPENUTAU ✶ SOFTWARE LIVRE ✶',
     voicesSection: {
       eyebrow: '01 · AS VOZES',
-      titleMain: 'Seis identidades.',
+      titleMain: 'Sete identidades.',
       titleEm: 'Um mesmo pomar.',
       desc: 'Cada voz carrega uma história, uma estética e novas possibilidades para produtores de música e artistas vocais.',
       listenSample: 'Ouvir amostra',
@@ -408,7 +408,7 @@ export const translations: Record<Language, TranslationSchema> = {
         audioSample: '/mizuki_sample.mp3',
         accent: '#504e67',
         meta: '7ª Geração · desde 2015',
-        detail: 'Voz brasileira de 7ª geração com temática inspirada em café, criado por Makki. Apresenta visual felino expressivo e canto versátil.',
+        detail: 'Voz brasileira de 7ª geração com temática inspirada em café, visual felino expressivo e canto versátil.',
         tags: ['UTAU', 'DiffSinger', 'Multilíngue'],
         profile: 'https://vsynthbr.fandom.com/pt-br/wiki/Mizuki',
         owner: 'https://www.youtube.com/@makkidot',
@@ -600,7 +600,7 @@ export const translations: Record<Language, TranslationSchema> = {
     ticker: 'UTAU ✶ OPENUTAU ✶ OPEN SOURCE ✶ BRAZILIAN VOICES ✶ LONG-TERM SUPPORT ✶ UTAU ✶ OPENUTAU ✶ OPEN SOURCE ✶',
     voicesSection: {
       eyebrow: '01 · THE VOICES',
-      titleMain: 'Six identities.',
+      titleMain: 'Seven identities.',
       titleEm: 'One single orchard.',
       desc: 'Each voice brings a unique story, aesthetic, and new sonic possibilities for music producers and vocal artists worldwide.',
       listenSample: 'Play sample',
@@ -971,7 +971,7 @@ export const translations: Record<Language, TranslationSchema> = {
     ticker: 'UTAU ✶ OPENUTAU ✶ برمجيات حرة ✶ أصوات برازيلية وعالمية ✶ دعم طويل الأمد ✶ UTAU ✶ OPENUTAU ✶',
     voicesSection: {
       eyebrow: '01 · الأصوات',
-      titleMain: 'ست هويات.',
+      titleMain: 'سبع هويات.',
       titleEm: 'بستان واحد مثمر.',
       desc: 'يحمل كل صوت قصة، جمالية فريدة، وآفاقاً موسيقية جديدة للمنتجين والفنانين في كل مكان.',
       listenSample: 'استمع للنموذج',
@@ -1359,7 +1359,7 @@ export const translations: Record<Language, TranslationSchema> = {
     ticker: 'UTAU ✶ OPENUTAU ✶ СВОБОДНОЕ ПО ✶ БРАЗИЛЬСКИЕ И МИРОВЫЕ ГОЛОСА ✶ LONG-TERM SUPPORT ✶ UTAU ✶ OPENUTAU ✶',
     voicesSection: {
       eyebrow: '01 · ГОЛОСА',
-      titleMain: 'Шесть личностей.',
+      titleMain: 'Семь личностей.',
       titleEm: 'Один цветущий сад.',
       desc: 'Каждый голос несет свою историю, эстетику и новые звуковые горизонты для музыкантов и вокальных продюсеров.',
       listenSample: 'Слушать сэмпл',
@@ -1747,7 +1747,7 @@ export const translations: Record<Language, TranslationSchema> = {
     ticker: 'UTAU ✶ OPENUTAU ✶ オープンソース ✶ ブラジル＆グローバル音源 ✶ 長期サポート (LTS) ✶ UTAU ✶ OPENUTAU ✶',
     voicesSection: {
       eyebrow: '01 · 音源紹介',
-      titleMain: '6つの個性。',
+      titleMain: '7つの個性。',
       titleEm: 'ひとつの果樹園。',
       desc: 'それぞれの声が紡ぐ物語、独自の美学、そして世界中の音楽制作者やボーカルアーティストに拓かれる新しい可能性。',
       listenSample: 'サンプルを聴く',

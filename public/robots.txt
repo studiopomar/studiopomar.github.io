@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://studiopomar.github.io/pomar-lts/sitemap.xml
+Sitemap: https://studiopomar.github.io/sitemap.xml
