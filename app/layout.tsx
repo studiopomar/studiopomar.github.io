@@ -98,6 +98,7 @@ const jsonLd = {
     {
       '@type': 'SoftwareApplication',
       name: 'KAMAFEU',
+      softwareVersion: '3.0.1',
       operatingSystem: 'Cross-platform',
       applicationCategory: 'MultimediaApplication',
       url: 'https://github.com/studiopomar/kamafeu',
