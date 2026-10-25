@@ -58,11 +58,11 @@ export default function NewsContent() {
         <div className="news-copy">
           <a className="news-back" href={`${basePath}/`}>← {copy.backHome}</a>
           <p className="news-eyebrow"><span />{copy.eyebrow}</p>
-          <div className="news-edition">STUDIO POMAR <i>✳</i> {copy.announcementBadge}</div>
+          <div className="news-edition">STUDIO POMAR <span className="news-mark-star" aria-hidden="true" /> {copy.announcementBadge}</div>
           <h1>{copy.title}<span>.</span></h1>
           <p className="news-description">{copy.description}</p>
           <div className="news-status"><span className="news-status-dot" />{copy.comingSoon}</div>
-          <div className="news-signature"><span>01</span><span>VOZES QUE CRIAM RAÍZES</span><span>✳</span></div>
+          <div className="news-signature"><span>01</span><span>VOZES QUE CRIAM RAÍZES</span><span className="news-mark-star" aria-hidden="true" /></div>
         </div>
 
         <div className="news-art-wrap">
@@ -85,8 +85,8 @@ export default function NewsContent() {
           <div className="news-art-orbit news-art-orbit-one" />
           <div className="news-art-orbit news-art-orbit-two" />
           <div className="news-art-halo" aria-hidden="true" />
-          <span className="news-art-spark news-art-spark-one">✳</span>
-          <span className="news-art-spark news-art-spark-two">✦</span>
+          <span className="news-art-spark news-art-spark-one" aria-hidden="true" />
+          <span className="news-art-spark news-art-spark-two" aria-hidden="true" />
           <span className="news-art-index">POMAR · 2026</span>
           <div className="news-art-depth">
             <picture>
