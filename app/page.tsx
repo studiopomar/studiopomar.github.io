@@ -82,6 +82,10 @@ export default function Home() {
           </div>
 
           <VoiceProfiles voices={voices} />
+          <div className="kukui-feature-link">
+            <p>Voicebank brasileiro para UTAU e OpenUtau, com foco em português e cultura amazônica.</p>
+            <a href={`${basePath}/kukui/`}>Conheça KUKUI, a voz do Purus <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
       </section>
 

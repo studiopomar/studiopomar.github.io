@@ -1,0 +1,959 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KUKUI: voicebank brasileiro para UTAU e OpenUtau | Studio Pomar</title>
+<meta name="description" content="Conheça KUKUI, voicebank brasileiro para UTAU e OpenUtau com foco em português brasileiro, identidade amazônica e personagem de raízes Apurinã. Explore demos, bancos de voz e termos de uso.">
+<meta name="author" content="Markz_505">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://studiopomar.github.io/kukui/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Studio Pomar">
+<meta property="og:title" content="KUKUI: a voz do Purus | Studio Pomar">
+<meta property="og:description" content="Voicebank brasileiro para UTAU e OpenUtau, com foco em português brasileiro e identidade amazônica.">
+<meta property="og:url" content="https://studiopomar.github.io/kukui/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="KUKUI: a voz do Purus | Studio Pomar">
+<meta name="twitter:description" content="Conheça o voicebank KUKUI, suas demos, bancos de voz e termos de uso.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"KUKUI: a voz do Purus","url":"https://studiopomar.github.io/kukui/","inLanguage":"pt-BR","description":"Voicebank brasileiro para UTAU e OpenUtau, com foco em canto em português brasileiro, identidade amazônica e personagem de raízes Apurinã.","isPartOf":{"@type":"WebSite","name":"Studio Pomar","url":"https://studiopomar.github.io/"},"about":{"@type":"SoftwareApplication","name":"KUKUI","applicationCategory":"MultimediaApplication","operatingSystem":"UTAU, OpenUtau","description":"Banco de voz para síntese vocal com foco em português brasileiro."},"author":{"@type":"Person","name":"Markz_505"}}</script>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,800;0,900;1,800;1,900&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
+<style>
+body{margin:0;background:#f7f7f5;overflow-x:hidden}
+a{color:#1d55c4}a:hover{color:#0f3a8c}
+.p2 *{box-sizing:border-box}
+.p2{--bg:#f7f7f5;--ink:#111111;--muted:#5d6370;--acc2:#138f9c;--soft:#e8eefb;--liquid:url("./assets/ebb3739238ab9e07689dc8b2e885a6ce.jpg");height:100vh;height:100dvh;min-height:340px;display:grid;grid-template-rows:auto minmax(0,1fr) 54px;background:var(--bg);color:var(--ink);font-family:'Inter Tight',system-ui,sans-serif;font-size:15px;line-height:1.55;overflow:hidden;position:relative;-webkit-font-smoothing:antialiased}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-80px;z-index:300;background:var(--ink);color:#fff;padding:10px 14px;border-radius:8px;font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.06em}
+.grad{font-style:italic;background:linear-gradient(90deg,var(--acc2),var(--acc));-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
+button{font:inherit;color:inherit}
+button:focus-visible,a:focus-visible,input:focus-visible,.scroller:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+svg.ic{width:17px;height:17px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+svg.logo-ic{width:18px;height:18px;flex:none;fill:currentColor;stroke:none}
+
+/* logo crops (real bounds of the artwork + margin) */
+.logo-crop{--lw:100px;display:block;position:relative;width:var(--lw);height:calc(var(--lw) * .5216);overflow:hidden;flex:none}
+.logo-crop img{position:absolute;max-width:none;width:calc(var(--lw) * 1.1538);left:calc(var(--lw) * -.0529);top:calc(var(--lw) * -.2981)}
+
+/* header */
+.head{background:#fff;position:relative;z-index:30}
+.head-in{height:64px;padding:0 18px;display:flex;align-items:center;gap:16px}
+.chunk-sq{flex:none;display:grid;place-items:center;width:40px;height:40px;border:2px solid var(--ink);border-radius:8px;background:#fff;color:var(--ink);cursor:pointer;box-shadow:3px 3px 0 var(--ink);text-decoration:none;font-weight:800;transition:transform .12s,box-shadow .12s,background .15s,color .15s}
+.chunk-sq:hover{color:var(--ink);transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.chunk-sq:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.chunk-sq.on{background:var(--acc);color:#fff}
+.chunk-sq.yt:hover{background:#ff0000;color:#fff}
+.chunk-sq.dc:hover{background:#5865f2;color:#fff}
+.chunk-sq.em:hover{background:#ea4335;color:#fff}
+.lcd{flex:none;display:flex;gap:12px;align-items:center;border:2px solid var(--ink);border-radius:8px;padding:7px 10px;font-family:'JetBrains Mono',monospace;font-size:12px;background:#fff}
+.lcd b{color:var(--acc)}
+.nav{display:flex;gap:2px;flex:1;justify-content:center;flex-wrap:wrap;min-width:0}
+.nav a{display:inline-flex;align-items:center;gap:8px;padding:12px 10px;color:var(--ink);text-decoration:none;font-weight:800;font-size:13px;letter-spacing:.04em;text-transform:uppercase;border-bottom:3px solid transparent}
+.nav a:hover{color:var(--acc)}
+.nav a.cur{color:var(--acc);border-bottom-color:var(--acc)}
+.socials{display:flex;gap:8px;flex:none}
+.rail{position:relative;height:9px;background:var(--ink);cursor:pointer;touch-action:none;outline:none}
+.rail::before{content:"";position:absolute;left:0;right:0;top:-8px;bottom:-8px}
+.rail:focus-visible{box-shadow:0 0 0 2px var(--acc)}
+.rail .fill{position:absolute;left:0;top:0;bottom:0;background:var(--acc);pointer-events:none}
+.rail .tick{position:absolute;top:-5px;font-family:'JetBrains Mono',monospace;font-size:10px;line-height:17px;padding:0 6px;background:#fff;border:2px solid var(--ink);border-radius:4px;transform:translateX(-50%);cursor:grab;box-shadow:2px 2px 0 var(--ink);transition:transform .12s}
+.rail .tick:hover{transform:translateX(-50%) scale(1.08)}
+.rail.drag .tick{cursor:grabbing;background:var(--acc);color:#fff}
+
+/* stage */
+.stage{--kw:60px;position:relative;display:grid;grid-template-columns:var(--kw) minmax(0,1fr);min-height:0}
+.keys{display:flex;flex-direction:column;border-right:2px solid var(--ink);background:#fff;position:relative;z-index:10}
+.key{flex:1;display:block;width:auto;min-height:0;position:relative;border:0;border-bottom:1px solid #c9c9c4;background:#fff;padding:0;cursor:pointer;transition:background .12s}
+.key:hover{background:var(--soft)}
+.key.blk:hover{background:#333}
+.key:active,.key.hit{background:var(--acc) !important}
+.key.blk{background:var(--ink);margin-right:22px;border-bottom-color:var(--ink);border-radius:0 3px 3px 0}
+.key span{position:absolute;right:5px;top:50%;transform:translateY(-50%);font-family:'JetBrains Mono',monospace;font-size:9px;color:#777}
+.key.on,.key.blk.on{background:var(--acc)}
+.key.on span{color:#fff}
+.scroller{position:relative;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;scrollbar-color:var(--ink) transparent}
+.scroller::-webkit-scrollbar{height:10px}
+.scroller::-webkit-scrollbar-thumb{background:var(--ink)}
+.timeline{position:relative;height:100%;background-color:var(--bg);background-image:repeating-linear-gradient(90deg,rgba(17,17,17,.22) 0 1.5px,transparent 1.5px 640px),repeating-linear-gradient(90deg,rgba(17,17,17,.08) 0 1px,transparent 1px 160px),repeating-linear-gradient(90deg,rgba(17,17,17,.035) 0 1px,transparent 1px 40px),repeating-linear-gradient(180deg,transparent 0 calc(4% - 1px),rgba(17,17,17,.06) calc(4% - 1px) 4%);background-position:560px 0,560px 0,560px 0,0 0}
+.voices{display:flex;gap:4px;margin-left:4px}
+.vpill{border:2px solid var(--ink);background:#fff;border-radius:999px;padding:0 10px;min-height:30px;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;transition:background .15s,color .15s}
+.vpill:hover{background:var(--soft)}
+.vpill[aria-pressed="true"]{background:var(--acc);color:#fff}
+.song-lane{position:absolute;top:20px;bottom:0;z-index:1;background:rgba(33,96,216,.045);border-left:2px solid var(--acc);border-right:2px dashed rgba(33,96,216,.4);pointer-events:none}
+.song-head{position:absolute;top:30px;z-index:6;display:flex;align-items:center;gap:10px;padding:5px 12px 5px 5px;background:#fff;border:2px solid var(--ink);border-radius:10px;box-shadow:3px 3px 0 var(--ink);transform:translateX(-2px)}
+.song-head .chunk-sq{width:34px;height:34px;box-shadow:2px 2px 0 var(--ink)}
+.song-head b{color:var(--acc)}
+.snote{padding:0 5px;font-size:10px;justify-content:flex-start;overflow:visible;z-index:5}
+.snote.on{z-index:6}
+.region{position:absolute;top:0;bottom:0;border-left:2px solid var(--ink);pointer-events:none}
+.region .word{position:absolute;top:26%;left:40px;font-weight:900;font-style:italic;font-size:min(30vh,280px);line-height:.9;letter-spacing:-.05em;white-space:nowrap;color:transparent;-webkit-text-stroke:2px rgba(17,17,17,.1)}
+.ruler{position:absolute;left:0;right:0;top:0;height:20px;background:var(--ink);z-index:3;pointer-events:none}
+.ruler span{position:absolute;top:3px;font-family:'JetBrains Mono',monospace;font-size:10px;color:#fff;padding-left:5px;border-left:1px solid #555;height:17px}
+.curve{position:absolute;inset:20px 0 0 0;width:100%;height:calc(100% - 20px);pointer-events:none;z-index:3;overflow:visible}
+.curve .ghost{fill:none;stroke:rgba(33,96,216,.18);stroke-width:2;stroke-dasharray:5 6}
+.curve .live{fill:none;stroke:var(--acc);stroke-width:3;stroke-linecap:round}
+
+/* notes */
+.note{position:absolute;z-index:4;display:flex;align-items:center;gap:6px;padding:0 8px;border-radius:5px;background:var(--acc);color:#fff;border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink);font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;white-space:nowrap;overflow:hidden;transition:background .2s,color .2s,opacity .3s,transform .2s}
+.note.past{opacity:.45}
+.note.on{background:var(--ink);color:#fff;box-shadow:3px 3px 0 var(--acc);transform:translate(-1px,-1px)}
+button.note{cursor:pointer;text-align:left;background:#fff;color:var(--ink)}
+button.note:hover{background:var(--soft)}
+button.note[aria-pressed="true"]{background:var(--acc);color:#fff}
+button.note.on{background:var(--ink);color:#fff}
+.note .ph{opacity:.6}
+.tnote{transition:top .4s cubic-bezier(.2,.8,.2,1),background .2s,color .2s,opacity .3s,transform .2s}
+.tnote .chev{margin-left:auto;font-size:10px;transition:transform .25s}
+.tnote[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.tnote[aria-expanded="true"]{background:var(--acc);color:#fff}
+.t-pop{z-index:7;border-top-left-radius:4px;animation:drop .35s cubic-bezier(.2,.8,.2,1);transform-origin:top left}
+.t-pop .win-bar{padding:6px 12px}
+.t-pop .t-title{font-size:clamp(15px,3vh,22px)}
+@keyframes drop{from{opacity:0;transform:translateY(-8px) scaleY(.92)}to{opacity:1;transform:none}}
+
+/* windows */
+.win{position:absolute;z-index:5;background:#fff;border:2px solid var(--ink);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:6px 6px 0 var(--ink);max-width:calc(100vw - var(--kw) - 24px);transition:box-shadow .25s}
+.win.on{box-shadow:6px 6px 0 var(--acc)}
+.win-bar{flex:none;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 14px;background:var(--ink);color:#fff;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600}
+.win-bar .sq{display:flex;gap:5px}
+.win-bar .sq i{width:10px;height:10px;border:1.5px solid #fff;border-radius:2px;display:block}
+.win-bar .sq i:last-child{background:#fff}
+.win-body{padding:clamp(14px,2.4vh,24px);overflow:auto;min-height:0;scrollbar-width:thin}
+.ghostwin{position:absolute;z-index:5}
+
+/* intro */
+.kicker{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:2px solid var(--ink);border-radius:999px;background:#fff;font-weight:600}
+.kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--acc)}
+.intro h1{position:relative;display:block;width:max-content;margin:2.4vh 0 0;line-height:0}
+.intro .logo-crop{--lw:min(30vw,46vh,460px);margin-left:-6px}
+.star{position:absolute;right:-28px;top:-4px;width:42px;height:42px;fill:var(--ink);animation:spin 10s linear infinite}
+.tag2{display:block;margin-top:.6vh;font-weight:900;font-size:min(7vh,64px);line-height:1;letter-spacing:-.04em}
+.sub{margin:2vh 0 2.6vh;color:var(--muted);font-weight:500;font-size:14px}
+.ctas{display:flex;gap:14px;flex-wrap:wrap}
+.btn-chunk{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border-radius:10px;border:2px solid var(--ink);background:var(--acc);color:#fff;font-weight:800;font-size:14px;letter-spacing:.02em;text-decoration:none;box-shadow:4px 4px 0 var(--ink);transition:transform .12s,box-shadow .12s,background .15s,color .15s}
+.btn-chunk:hover{color:#fff;transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.btn-chunk:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.btn-white{background:#fff;color:var(--ink)}
+.btn-white:hover{color:var(--ink)}
+.btn-chunk.yt:hover{background:#ff0000;color:#fff}
+.bust{position:absolute;z-index:3;pointer-events:none}
+.bust .cat{position:absolute;left:50%;top:40%;transform:translate(-50%,-50%);font-weight:900;font-style:italic;line-height:1;letter-spacing:-.05em;white-space:nowrap;color:transparent;-webkit-text-stroke:2.5px var(--ink);opacity:0;transition:opacity 1s ease}
+.bust .cat.on{opacity:1}
+.bust-frame{position:absolute;inset:0;overflow:hidden;-webkit-mask-image:linear-gradient(180deg,#000 84%,transparent 100%);mask-image:linear-gradient(180deg,#000 84%,transparent 100%)}
+.bust-frame img{position:absolute;max-width:none;opacity:0;transition:opacity 1.1s ease}
+.bust-frame img.on{opacity:1}
+
+/* text in windows */
+.h2{margin:0 0 1.6vh;font-weight:900;font-size:min(6.4vh,56px);line-height:.98;letter-spacing:-.04em}
+.p{margin:0 0 1.4vh;color:#2c3038;font-size:clamp(13px,2vh,15.5px)}
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;padding:5px 12px;border-radius:999px;border:2px solid var(--ink);background:#fff;font-size:12px;font-weight:700}
+.frame{position:absolute;z-index:4;border:2px solid var(--ink);border-radius:14px;overflow:hidden;background-color:#2f73b8;background-image:var(--liquid);background-size:cover;box-shadow:6px 6px 0 var(--ink)}
+.frame img{position:absolute;left:4%;right:4%;top:4%;bottom:0;width:92%;height:96%;object-fit:contain;object-position:bottom center}
+.frame .cap{position:absolute;left:10px;top:10px;padding:4px 9px;border-radius:6px;background:var(--ink);color:#fff;z-index:2}
+
+/* banks */
+.bank{position:absolute;z-index:5;display:flex;gap:14px;align-items:flex-start;padding:12px;border-radius:14px;background:#fff;border:2px solid var(--ink);box-shadow:5px 5px 0 var(--ink);cursor:pointer;text-align:left;max-width:calc(100vw - var(--kw) - 24px);transition:transform .12s,box-shadow .12s}
+.bank:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.bank.on{box-shadow:6px 6px 0 var(--acc)}
+.bank .ic{position:relative;flex:none;width:min(13vh,104px);height:min(13vh,104px);border-radius:10px;overflow:hidden;border:2px solid var(--ink)}
+.bank .ic img{display:block;width:100%;height:100%;object-fit:cover;object-position:center top}
+.bank .num{display:inline-block;margin-right:6px;padding:1px 6px;border-radius:4px;background:var(--ink);color:#fff;font-size:10px}
+.bank .bi{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
+.bank .idx{color:var(--muted);font-size:10px}
+.bank h3{margin:0;font-weight:900;font-size:clamp(15px,2.6vh,20px);text-transform:uppercase;letter-spacing:-.02em;line-height:1.1}
+.bank .ty{color:var(--acc);font-weight:600;font-size:10px}
+.bank p{margin:0;font-size:13px;line-height:1.35;color:#2c3038}
+.bank .row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:6px}
+.bank .vtag{color:var(--muted);font-size:9px}
+.bank .go{display:grid;place-items:center;width:30px;height:30px;border-radius:7px;border:2px solid var(--ink);background:var(--acc);color:#fff;font-weight:800;font-size:13px}
+
+/* terms */
+.t-big{font-weight:900;font-style:italic;font-size:min(10vh,84px);line-height:.85;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:2px var(--ink)}
+.t-title{margin:.8vh 0 1.2vh;font-weight:900;font-size:clamp(16px,3.4vh,26px);letter-spacing:-.02em;line-height:1.05}
+.fade-a,.fade-b{animation:fade .45s ease}
+
+/* contact + footer */
+.cta h2{margin:0 0 3vh;font-weight:900;font-size:min(9vh,84px);line-height:.92;letter-spacing:-.045em}
+.cta .mono{display:block;margin-bottom:1.4vh;color:var(--muted)}
+.foot{position:absolute;z-index:5;background:var(--ink);color:#fff;border:2px solid var(--ink);border-radius:14px;overflow:hidden;box-shadow:6px 6px 0 var(--acc);max-width:calc(100vw - var(--kw) - 24px)}
+.checker{height:12px;background-image:repeating-conic-gradient(var(--ink) 0 25%,#fff 0 50%);background-size:12px 12px}
+.foot-in{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;padding:18px 22px}
+.foot-in .logo-crop{--lw:170px}
+.foot-in strong{font-weight:800}
+.foot-links{display:flex;flex-wrap:wrap;gap:4px 18px}
+.foot-links a{display:inline-flex;align-items:center;gap:8px;color:#fff;text-decoration:underline;text-underline-offset:3px;padding:6px 0;font-weight:600;font-size:14px}
+.foot-links a.yt:hover{color:#ff5c5c}.foot-links a.dc:hover{color:#8f98ff}.foot-links a.em:hover{color:#ff8a7e}
+.foot-links a.top:hover{color:#9bbcff}
+.foot small{display:block;padding:0 22px 16px;color:#b7bcc6;font-size:12px}
+
+/* playhead */
+.playhead{position:absolute;top:0;bottom:0;left:var(--kw);width:3px;margin-left:-1.5px;background:var(--ink);z-index:15;pointer-events:none}
+.playhead::before{content:"";position:absolute;top:20px;left:-7px;border-left:8.5px solid transparent;border-right:8.5px solid transparent;border-top:12px solid var(--acc)}
+.ripple{position:absolute;z-index:8;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;border:2px solid var(--ink);pointer-events:none;animation:ripple 1.1s ease-out forwards}
+
+/* bottom band */
+.band{display:flex;align-items:center;gap:0;border-top:2px solid var(--ink);background:var(--acc);color:#fff;overflow:hidden;position:relative;z-index:20}
+.lyric{flex:none;align-self:stretch;display:flex;align-items:center;gap:8px;padding:0 16px;background:#fff;color:var(--ink);border-right:2px solid var(--ink);font-weight:900;font-size:20px;min-width:180px;max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lyric .mono{color:var(--muted)}
+.ticker{flex:1;overflow:hidden}
+.track{display:flex;width:max-content;animation:marquee 34s linear infinite}
+.track span{padding:0 14px;white-space:nowrap;font-weight:900;font-size:20px;letter-spacing:-.01em}
+.track .s{color:var(--ink)}
+
+/* modal */
+.overlay{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:24px}
+.backdrop{position:absolute;inset:0;width:100%;height:100%;border:0;background:rgba(17,17,17,.55);cursor:pointer}
+.mwin{position:relative;width:min(1000px,100%);height:min(720px,calc(100vh - 48px));display:flex;flex-direction:column;overflow:hidden;background:#fff;border:2px solid var(--ink);border-radius:14px;box-shadow:6px 6px 0 var(--ink);animation:pop .25s ease}
+.close{flex:none;width:30px;height:26px;border:1.5px solid #fff;border-radius:5px;background:transparent;color:#fff;cursor:pointer;font-weight:800;line-height:1}
+.close:hover{background:#fff;color:var(--ink)}
+.m-grid{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);grid-template-rows:minmax(0,1fr)}
+.m-art{position:relative;height:100%;min-height:0;background-color:#2f73b8;background-image:var(--liquid);background-size:cover;overflow:hidden;border-right:2px solid var(--ink)}
+/* each artwork is framed by its real drawn area, so every character is centred and as big as the panel allows */
+.fitbox{position:absolute;left:5%;right:5%;top:58px;bottom:76px;container-type:size}
+.m-art.solo .fitbox{bottom:20px}
+.fig{position:absolute;left:50%;bottom:0;transform:translate(-50%,10px) scale(.985);opacity:0;transition:opacity .65s ease,transform .65s cubic-bezier(.2,.8,.2,1)}
+.fig.on{opacity:1;transform:translate(-50%,0)}
+.fig img{position:absolute;max-width:none;height:auto;filter:drop-shadow(0 14px 18px rgba(0,0,0,.25))}
+svg.pp{width:16px;height:16px;fill:currentColor;display:block;margin:auto}
+.btn-chunk.dl{align-self:flex-start;gap:10px}
+.m-credit{position:absolute;left:12px;top:12px;padding:5px 10px;border-radius:6px;background:var(--ink);color:#fff;font-size:13px}
+.m-ctrl{position:absolute;left:12px;right:12px;bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:4px;border-radius:12px;background:#fff;border:2px solid var(--ink)}
+.rnd{width:40px;height:40px;flex:none;border-radius:8px;border:2px solid var(--ink);background:#fff;cursor:pointer;font-weight:800}
+.rnd:hover{background:var(--acc);color:#fff}
+.m-info{padding:24px 26px;display:flex;flex-direction:column;gap:18px;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+.m-info h2{margin:0;font-weight:900;font-size:34px;line-height:1;letter-spacing:-.035em;text-transform:uppercase}
+.m-ty{color:var(--acc);font-weight:600}
+.m-title{margin:6px 0;font-weight:800;font-size:20px}
+.m-info p{margin:0;color:#2c3038}
+.notice{border:2px solid var(--ink);border-radius:12px;padding:12px 14px;background:#fff;box-shadow:3px 3px 0 var(--ink);font-size:14px;line-height:1.55}
+.notice p+p{margin-top:8px}
+.notice a{font-weight:700;color:var(--acc);text-decoration:underline}
+.notice ul{margin:0;padding-left:18px;color:#2c3038}
+.notice li+li{margin-top:6px}
+.grp-l.warn{background:#ffd23f;color:var(--ink)}
+.grp-l{display:inline-flex;align-items:center;gap:8px;margin-bottom:10px;padding:6px 12px;border-radius:8px;border:2px solid var(--ink);background:var(--acc);color:#fff;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;box-shadow:3px 3px 0 var(--ink)}
+.range-v{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:16px}
+.mpill{border:2px solid var(--ink);background:#fff;border-radius:999px;padding:0 16px;min-height:40px;cursor:pointer;font-weight:700}
+.mpill:hover{background:var(--soft)}
+.mpill[aria-pressed="true"]{background:var(--ink);color:#fff}
+.player{display:flex;align-items:center;gap:14px;background:#fff;border:2px solid var(--ink);border-radius:999px;padding:5px 18px 5px 5px}
+.play{flex:none;width:42px;height:42px;border-radius:50%;border:2px solid var(--ink);background:var(--acc);color:#fff;font-weight:800;cursor:pointer}
+.play:hover{background:var(--ink)}
+.play:disabled,.seek:disabled{opacity:.35;cursor:not-allowed}
+.seek{flex:1;min-width:0;accent-color:var(--acc);height:24px;cursor:pointer}
+.time{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);white-space:nowrap}
+.m-status{margin:0 0 10px !important;color:var(--muted) !important;font-size:14px}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes ripple{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(9)}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes pop{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+.still *,.still *::before,.still *::after{animation:none !important;transition:none !important}
+@media (prefers-reduced-motion: reduce){.p2 *,.p2 *::before,.p2 *::after{animation:none !important;transition:none !important}}
+@media (max-width: 1100px){.lcd{display:none}}
+@media (max-width: 860px){
+  .socials{display:none}
+  .head-in{gap:10px;padding:0 12px}
+  .nav{flex-wrap:nowrap}
+  .nav a{padding:10px 7px;font-size:12px}
+  .nav a .ic{display:none}
+  .stage{grid-template-columns:34px minmax(0,1fr)}
+  .key.blk{margin-right:12px}
+  .key span{display:none}
+  .stage{--kw:34px}
+  .lyric{min-width:120px;font-size:16px}
+  .track span{font-size:16px}
+}
+@media (max-width: 640px){
+  .head-in{height:auto;flex-wrap:wrap;padding:8px 10px;gap:8px}
+  .head-in > .logo-crop{--lw:84px}
+  .nav{order:3;flex-basis:100%;justify-content:space-between;overflow-x:auto}
+  .nav a{padding:6px 4px;font-size:11.5px;letter-spacing:.02em}
+  .overlay{padding:10px}
+  .mwin{height:calc(100vh - 20px);height:calc(100dvh - 20px)}
+  .m-grid{grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr)}
+  .m-art{height:min(300px,38vh);border-right:0;border-bottom:2px solid var(--ink)}
+  .fitbox{top:44px;bottom:62px}
+  .m-art.solo .fitbox{bottom:12px}
+  .m-credit{font-size:11px;left:8px;top:8px}
+  .m-ctrl{left:8px;right:8px;bottom:8px}
+  .rnd{width:34px;height:34px}
+  .m-info{padding:18px 16px;gap:16px}
+  .m-info h2{font-size:26px}
+  .btn-chunk.dl{align-self:stretch;justify-content:center}
+  .lyric{min-width:96px;max-width:140px;padding:0 10px;font-size:15px}
+}
+/* narrow screens: one window per screen width */
+.compact .intro .logo-crop{--lw:min(64vw,34vh,300px)}
+.compact .tag2{font-size:min(6vh,40px)}
+.compact .sub{font-size:12px}
+.compact .ctas{gap:10px}
+.compact .ctas .btn-chunk{padding:11px 14px;font-size:12.5px}
+.compact .star{width:30px;height:30px;right:-20px}
+.compact .h2{font-size:min(6vh,40px)}
+.compact .p{font-size:14px}
+.compact .song-head{gap:6px;padding:4px}
+.compact .song-head .mono{display:none}
+.compact .vpill{padding:0 8px;min-height:28px}
+.compact .bank{gap:10px;padding:10px}
+.compact .bank .ic{width:min(11vh,76px);height:min(11vh,76px)}
+.compact .bank h3{font-size:17px}
+.compact .cta h2{font-size:min(8vh,42px)}
+.compact .foot-in{padding:16px}
+.compact .foot-in .logo-crop{--lw:130px}
+.compact .region .word{font-size:min(22vh,200px)}
+.compact .playhead{width:2px;margin-left:-1px;background:rgba(17,17,17,.4)}
+/* short screens (phone lying down) */
+@media (max-height: 520px){
+  .p2{grid-template-rows:auto minmax(0,1fr) 38px}
+  .head-in{height:48px}
+  .head-in > .logo-crop{--lw:80px}
+  .chunk-sq{width:34px;height:34px}
+  .lyric,.track span{font-size:14px}
+  .intro .logo-crop{--lw:min(30vw,34vh,300px)}
+  .tag2{font-size:min(8vh,40px)}
+  .sub{margin:1.4vh 0;font-size:12px}
+  .btn-chunk{padding:9px 14px;font-size:12.5px}
+  .win-bar{padding:5px 12px}
+  .mwin{height:calc(100vh - 20px);height:calc(100dvh - 20px)}
+  .overlay{padding:10px}
+}
+</style>
+</helmet>
+
+<div class="p2 {{rootClass}}" style="--acc: {{accent}}">
+<a class="skip" href="#sobre">Pular para o conteúdo</a>
+<audio ref="{{setAudio}}" src="{{audioSrc}}" preload="metadata" onTimeUpdate="{{onTime}}" onLoadedMetadata="{{onTime}}" onPlay="{{onPlay}}" onPause="{{onPause}}" onEnded="{{onPause}}"></audio>
+
+<header class="head">
+  <div class="head-in">
+    <a class="logo-crop" href="#inicio" aria-label="KUKUI - A voz do Purus" onClick="{{goInicio}}"><img src="./assets/93fe0d249b5745062d2f3d2155649b3e.png" alt="KUKUI"></a>
+    <button class="chunk-sq {{auto.cls}}" type="button" aria-label="{{auto.label}}" aria-pressed="{{auto.pressed}}" onClick="{{toggleAuto}}"><sc-if value="{{auto.on}}" hint-placeholder-val="{{false}}"><svg class="pp" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg></sc-if><sc-if value="{{auto.off}}" hint-placeholder-val="{{true}}"><svg class="pp" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"></path></svg></sc-if></button>
+    <div class="lcd" aria-hidden="true"><span>BAR <b>{{lcd.bar}}</b></span><span>{{lcd.pitch}}</span><span>130 bpm</span></div>
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="{{nav.inicio}}" href="#inicio" onClick="{{goInicio}}"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3z"></path></svg>Início</a>
+      <a class="{{nav.sobre}}" href="#sobre" onClick="{{goSobre}}"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 4-6 8-6s8 2 8 6"></path></svg>O KUKUI</a>
+      <a class="{{nav.voicebanks}}" href="#voicebanks" onClick="{{goBanks}}"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h2l2-6 3 12 3-9 2 6 2-3h4"></path></svg>Voicebanks</a>
+      <a class="{{nav.termos}}" href="#termos" onClick="{{goTermos}}"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"></path><path d="M14 3v5h5M9 13h7M9 17h7"></path></svg>Termos</a>
+    </nav>
+    <div class="socials">
+      <a class="chunk-sq yt" href="https://www.youtube.com/@Kukui_505" target="_blank" rel="noopener noreferrer" aria-label="KUKUI NO YOUTUBE ↗"><svg class="logo-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"></path></svg></a>
+      <a class="chunk-sq dc" href="https://discordapp.com/users/1324892867247997024" target="_blank" rel="noopener noreferrer" aria-label="Discord ↗"><svg class="logo-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.89-1.52.07.07 0 0 0-.08.04c-.21.38-.44.87-.61 1.25a18.27 18.27 0 0 0-5.49 0 12.64 12.64 0 0 0-.62-1.25.08.08 0 0 0-.08-.04 19.74 19.74 0 0 0-4.88 1.52.07.07 0 0 0-.03.03C.53 9.05-.32 13.58.1 18.06a.08.08 0 0 0 .03.06 19.9 19.9 0 0 0 5.99 3.03.08.08 0 0 0 .09-.03c.46-.63.87-1.3 1.22-1.99a.08.08 0 0 0-.04-.11 13.1 13.1 0 0 1-1.87-.89.08.08 0 0 1-.01-.13c.13-.09.25-.19.37-.29a.07.07 0 0 1 .08-.01c3.93 1.79 8.18 1.79 12.06 0a.07.07 0 0 1 .08.01c.12.1.25.2.37.29a.08.08 0 0 1-.01.13c-.6.35-1.22.64-1.87.89a.08.08 0 0 0-.04.11c.36.7.77 1.36 1.22 1.99a.08.08 0 0 0 .09.03 19.84 19.84 0 0 0 6-3.03.08.08 0 0 0 .03-.06c.5-5.18-.84-9.67-3.55-13.66a.06.06 0 0 0-.03-.03zM8.02 15.33c-1.18 0-2.16-1.09-2.16-2.42s.96-2.42 2.16-2.42c1.21 0 2.18 1.1 2.16 2.42 0 1.33-.96 2.42-2.16 2.42zm7.97 0c-1.18 0-2.15-1.09-2.15-2.42s.95-2.42 2.15-2.42c1.21 0 2.18 1.1 2.16 2.42 0 1.33-.95 2.42-2.16 2.42z"></path></svg></a>
+      <a class="chunk-sq em" href="mailto:kzuta505@gmail.com" aria-label="E-mail ↗"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></a>
+    </div>
+  </div>
+  <div class="rail {{railCls}}" role="slider" tabindex="0" aria-label="Posição na partitura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{progressInt}}" onPointerDown="{{railDown}}" onPointerMove="{{railMove}}" onPointerUp="{{railUp}}" onPointerCancel="{{railUp}}" onKeyDown="{{railKey}}"><div class="fill" style="width: {{progressPct}}%"></div><span class="tick" style="left: clamp(24px, {{tickPct}}%, calc(100% - 24px))">▸▸▸</span></div>
+</header>
+
+<main class="stage">
+  <div class="keys" role="group" aria-label="Teclado">
+    <sc-for list="{{keys}}" as="k" hint-placeholder-count="25"><button class="key {{k.cls}}" type="button" tabindex="-1" aria-label="{{k.name}}" onPointerDown="{{k.play}}"><span>{{k.label}}</span></button></sc-for>
+  </div>
+
+  <div class="scroller" ref="{{setScroller}}" onScroll="{{onScroll}}" tabindex="0" aria-label="Partitura do Kukui: role para os lados">
+    <div class="timeline" style="width: {{W}}px" onPointerDown="{{onRipple}}">
+      <sc-for list="{{regions}}" as="r" hint-placeholder-count="5">
+        <div class="region" aria-hidden="true" style="left: {{r.x}}px; width: {{r.w}}px"><span class="word" style="transform: translateX({{r.tx}}px)">{{r.word}}</span></div>
+      </sc-for>
+      <div class="ruler" aria-hidden="true">
+        <sc-for list="{{bars}}" as="b" hint-placeholder-count="27"><span style="left: {{b.x}}px">{{b.n}}</span></sc-for>
+      </div>
+      <svg class="curve" viewBox="0 0 {{W}} 1000" preserveAspectRatio="none" aria-hidden="true">
+        <path class="ghost" d="{{curve}}" vector-effect="non-scaling-stroke"></path>
+        <path class="live" d="{{curve}}" pathLength="1000" stroke-dasharray="1000" stroke-dashoffset="{{curveOffset}}" vector-effect="non-scaling-stroke"></path>
+      </svg>
+
+      <section id="inicio" class="ghostwin intro" aria-label="KUKUI - A voz do Purus" style="left: {{L.introX}}px; top: 7%; width: {{L.introW}}px">
+        <span class="kicker mono"><span class="dot" aria-hidden="true"></span>AMAZONAS → MUNDO</span>
+        <h1><span class="logo-crop"><img src="./assets/93fe0d249b5745062d2f3d2155649b3e.png" alt="KUKUI"></span><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1c1.2 5.6 5.4 9.8 11 11-5.6 1.2-9.8 5.4-11 11-1.2-5.6-5.4-9.8-11-11C6.6 10.8 10.8 6.6 12 1z"></path></svg><span class="sr-only"> - A voz do Purus</span></h1>
+        <span class="tag2 grad" aria-hidden="true">A voz do Purus</span>
+        <p class="sub">OPENUTAU / PORTUGUÊS BRASILEIRO<br>IDENTIDADE AMAZONENSE. EXPRESSÃO SEM FRONTEIRAS.</p>
+        <div class="ctas">
+          <a class="btn-chunk" href="#sobre" onClick="{{goSobre}}">CONHEÇA O PROJETO ↓</a>
+          <a class="btn-chunk btn-white yt" href="https://www.youtube.com/@Kukui_505" target="_blank" rel="noopener noreferrer">KUKUI NO YOUTUBE ↗</a>
+        </div>
+      </section>
+      <div class="bust" style="left: {{bust.l}}px; top: {{bust.t}}px; width: {{bust.w}}px; height: {{bust.h}}px">
+        <sc-for list="{{slides}}" as="s" hint-placeholder-count="4"><span class="cat {{s.cls}}" aria-hidden="true" style="font-size: {{s.fs}}px">{{s.disp}}</span></sc-for>
+        <div class="bust-frame">
+          <sc-for list="{{slides}}" as="s" hint-placeholder-count="4"><img class="{{s.cls}}" src="{{s.img}}" alt="{{s.alt}}" style="width: {{s.w}}px; left: {{s.l}}px; top: {{s.t}}px"></sc-for>
+        </div>
+      </div>
+
+      <div class="song-head" style="left: {{song.x}}px">
+        <button class="chunk-sq {{auto.cls}}" type="button" aria-label="{{auto.label}}" aria-pressed="{{auto.pressed}}" onClick="{{toggleAuto}}"><sc-if value="{{auto.on}}" hint-placeholder-val="{{false}}"><svg class="pp" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg></sc-if><sc-if value="{{auto.off}}" hint-placeholder-val="{{true}}"><svg class="pp" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"></path></svg></sc-if></button>
+        <span class="mono"><b>{{voice.track}}</b> · {{voice.singer}} · 130 bpm</span>
+        <div class="voices" role="group" aria-label="Modo vocal">
+          <sc-for list="{{voices}}" as="v" hint-placeholder-count="4"><button class="vpill" type="button" aria-pressed="{{v.pressed}}" onClick="{{v.pick}}">{{v.label}}</button></sc-for>
+        </div>
+      </div>
+      <div class="song-lane" aria-hidden="true" style="left: {{song.x}}px; width: {{song.w}}px"></div>
+      <sc-for list="{{songNotes}}" as="n" hint-placeholder-count="19">
+        <span class="note snote {{n.cls}}" aria-hidden="true" style="left: {{n.x}}px; width: {{n.w}}px; top: {{n.top}}%; height: 4%">{{n.lyric}}</span>
+      </sc-for>
+
+      <section id="sobre" class="win {{sobreOn}}" style="left: 3600px; top: 6%; width: {{L.sobreW}}px; max-height: 86%">
+        <div class="win-bar"><span>01 / SOBRE O KUKUI</span><span class="sq" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        <div class="win-body">
+          <h2 class="h2">Tecnologia, voz<br>e <em class="grad">identidade.</em></h2>
+          <p class="p">O Kukui é um banco de voz desenvolvido para o sintetizador <a href="https://github.com/stakira/OpenUtau" target="_blank" rel="noopener noreferrer">OpenUtau</a>, projetado para oferecer uma voz clara, natural e expressiva. Com foco no canto em Português Brasileiro, o projeto busca proporcionar melhor adaptação ao idioma, priorizando pronúncia consistente, fluidez e qualidade sonora.</p>
+          <p class="p">Mais do que um voicebank, o Kukui é uma iniciativa dedicada a fortalecer a presença da cultura Amazonense no universo UTAU, apresentando um personagem de raízes Apurinã. O projeto valoriza identidade, representatividade e regionalidade, unindo tecnologia e tradição em uma proposta que vai além da música: é também uma forma de expressão cultural e preservação simbólica.</p>
+          <div class="pills"><span class="pill">AMAZONAS</span><span class="pill">RAÍZES APURINÃ</span><span class="pill">PT-BR</span></div>
+        </div>
+      </section>
+      <div class="frame" style="left: {{L.frameX}}px; top: 6%; width: {{L.frameW}}px; height: 84%">
+        <img src="./assets/63383a7922b11ec49648645485e8f07f.png" alt="Kukui CVC Mini Boi, ilustração de Elfthonny" loading="lazy">
+        <span class="cap mono">ARTE / ELFTHONNY</span>
+      </div>
+
+      <section id="voicebanks" class="win {{banksOn}}" style="left: 4720px; top: 6%; width: {{L.vbW}}px">
+        <div class="win-bar"><span>02 / EXPLORE O SOM</span><span class="sq" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        <div class="win-body">
+          <h2 class="h2">Bancos de <em class="grad">voz.</em></h2>
+          <p class="p" style="margin: 0">Conheça os modos vocais, ouça as demonstrações e consulte as informações de cada banco.</p>
+        </div>
+      </section>
+      <div class="win" style="left: 4720px; top: 60%; width: {{L.vbW}}px">
+        <div class="win-body"><p class="p" style="margin: 0; font-size: 13px; color: var(--muted)">CVC Mini Boi e VCCV Boi, Purus &amp; Galeroso constam no catálogo oficial. CVVC e DS têm materiais neste projeto; informações e distribuição ainda não constam no site de referência.</p></div>
+      </div>
+      <sc-for list="{{banks}}" as="b" hint-placeholder-count="4">
+        <button class="bank {{b.cls}}" type="button" aria-haspopup="dialog" onClick="{{b.open}}" style="left: {{b.x}}px; top: {{b.top}}%; width: {{L.bankW}}px">
+          <span class="ic" style="background-color: {{b.color}}"><img src="{{b.icon}}" alt="" loading="lazy"></span>
+          <span class="bi">
+            <span class="idx mono">{{b.index}}</span>
+            <h3>{{b.name}}</h3>
+            <span class="ty mono">{{b.type}}</span>
+            <p>{{b.summary}}</p>
+            <span class="row"><span class="vtag mono">{{b.tag}}</span><span class="go" aria-hidden="true">↗</span></span>
+          </span>
+        </button>
+      </sc-for>
+
+      <section id="termos" class="win {{termsOn}}" style="left: 6480px; top: 6%; width: {{L.termW}}px">
+        <div class="win-bar"><span>03 / ANTES DE CRIAR</span><span class="sq" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        <div class="win-body">
+          <h2 class="h2">Termos de <em class="grad">uso.</em></h2>
+          <p class="p" style="margin: 0">Ao utilizar o banco de vozes Kukui, você aceita e compromete-se a seguir os termos de uso.</p>
+        </div>
+      </section>
+      <aside class="win" style="left: 6480px; top: 54%; width: {{L.termW}}px">
+        <div class="win-bar"><span>CRIADOR / MARKZ_505</span><span class="sq" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        <div class="win-body">
+          <h3 class="t-title" style="margin-top: 0">Crie com<br>responsabilidade.</h3>
+          <p class="p" style="margin: 0">Um resumo dos termos de uso do Kukui. Leia antes de criar.</p>
+        </div>
+      </aside>
+      <div role="group" aria-label="Termos de uso">
+        <sc-for list="{{termNotes}}" as="t" hint-placeholder-count="6">
+          <button class="note tnote {{t.cls}}" type="button" aria-expanded="{{t.expanded}}" aria-controls="term-pop" onClick="{{t.pick}}" style="left: {{t.x}}px; width: {{t.w}}px; top: {{t.top}}%; height: 4.4%"><span class="ph">{{t.n}}</span>{{t.title}}<span class="chev" aria-hidden="true">▾</span></button>
+        </sc-for>
+      </div>
+      <sc-if value="{{termOpen}}" hint-placeholder-val="{{true}}">
+        <div id="term-pop" class="win t-pop {{termFade}}" aria-live="polite" style="left: {{pop.x}}px; top: {{pop.top}}%; width: {{pop.w}}px; max-height: {{pop.h}}%">
+          <div class="win-bar"><span>{{term.n}} / 06</span><span class="sq" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <div class="win-body">
+            <h3 class="t-title" style="margin-top: 0">{{term.title}}</h3>
+            <p class="p" style="margin: 0">{{term.body}}</p>
+          </div>
+        </div>
+      </sc-if>
+
+      <section class="win cta" style="left: 7880px; top: 6%; width: {{L.ctaW}}px">
+        <div class="win-bar"><span>CONTINUE ESSA HISTÓRIA</span><span class="sq" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        <div class="win-body">
+          <h2>A próxima música<br>pode ser <em class="grad">a sua.</em></h2>
+          <a class="btn-chunk yt" href="https://www.youtube.com/@Kukui_505" target="_blank" rel="noopener noreferrer">KUKUI NO YOUTUBE ↗</a>
+        </div>
+      </section>
+      <footer class="foot" style="left: {{L.footX}}px; top: {{L.footTop}}%; width: {{L.ctaW}}px">
+        <div class="checker" aria-hidden="true"></div>
+        <div class="foot-in">
+          <span class="logo-crop"><img src="./assets/6bece589eb52be94f97691ea7c3d2ebe.png" alt="KUKUI"></span>
+          <strong>KUKUI - A voz do Purus</strong>
+          <div class="foot-links">
+            <a class="em" href="mailto:kzuta505@gmail.com"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>E-mail ↗</a>
+            <a class="dc" href="https://discordapp.com/users/1324892867247997024" target="_blank" rel="noopener noreferrer"><svg class="logo-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.89-1.52.07.07 0 0 0-.08.04c-.21.38-.44.87-.61 1.25a18.27 18.27 0 0 0-5.49 0 12.64 12.64 0 0 0-.62-1.25.08.08 0 0 0-.08-.04 19.74 19.74 0 0 0-4.88 1.52.07.07 0 0 0-.03.03C.53 9.05-.32 13.58.1 18.06a.08.08 0 0 0 .03.06 19.9 19.9 0 0 0 5.99 3.03.08.08 0 0 0 .09-.03c.46-.63.87-1.3 1.22-1.99a.08.08 0 0 0-.04-.11 13.1 13.1 0 0 1-1.87-.89.08.08 0 0 1-.01-.13c.13-.09.25-.19.37-.29a.07.07 0 0 1 .08-.01c3.93 1.79 8.18 1.79 12.06 0a.07.07 0 0 1 .08.01c.12.1.25.2.37.29a.08.08 0 0 1-.01.13c-.6.35-1.22.64-1.87.89a.08.08 0 0 0-.04.11c.36.7.77 1.36 1.22 1.99a.08.08 0 0 0 .09.03 19.84 19.84 0 0 0 6-3.03.08.08 0 0 0 .03-.06c.5-5.18-.84-9.67-3.55-13.66a.06.06 0 0 0-.03-.03zM8.02 15.33c-1.18 0-2.16-1.09-2.16-2.42s.96-2.42 2.16-2.42c1.21 0 2.18 1.1 2.16 2.42 0 1.33-.96 2.42-2.16 2.42zm7.97 0c-1.18 0-2.15-1.09-2.15-2.42s.95-2.42 2.15-2.42c1.21 0 2.18 1.1 2.16 2.42 0 1.33-.95 2.42-2.16 2.42z"></path></svg>Discord ↗</a>
+            <a class="yt" href="https://www.youtube.com/@Kukui_505" target="_blank" rel="noopener noreferrer"><svg class="logo-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"></path></svg>KUKUI NO YOUTUBE ↗</a>
+            <a class="top" href="#inicio" onClick="{{goInicio}}">Voltar ao topo ↑</a>
+          </div>
+        </div>
+        <small>© 2025–2026 KUKUI. Todos os direitos reservados.</small>
+      </footer>
+
+      <sc-for list="{{ripples}}" as="rp" hint-placeholder-count="0">
+        <span class="ripple" aria-hidden="true" style="left: {{rp.x}}px; top: {{rp.y}}px"></span>
+      </sc-for>
+    </div>
+  </div>
+  <div class="playhead" aria-hidden="true" style="transform: translateX({{phX}}px)"></div>
+</main>
+
+<div class="band">
+  <div class="lyric" aria-hidden="true"><span class="mono">♪</span>{{lcd.lyric}}</div>
+  <div class="ticker" aria-hidden="true">
+    <div class="track"><span>KUKUI</span><span class="s">✦</span><span>A VOZ DO PURUS</span><span class="s">✦</span><span>PORTUGUÊS BRASILEIRO</span><span class="s">✦</span><span>KUKUI</span><span class="s">✦</span><span>A VOZ DO PURUS</span><span class="s">✦</span><span>PORTUGUÊS BRASILEIRO</span><span class="s">✦</span><span>KUKUI</span><span class="s">✦</span><span>A VOZ DO PURUS</span><span class="s">✦</span><span>PORTUGUÊS BRASILEIRO</span><span class="s">✦</span><span>KUKUI</span><span class="s">✦</span><span>A VOZ DO PURUS</span><span class="s">✦</span><span>PORTUGUÊS BRASILEIRO</span><span class="s">✦</span></div>
+  </div>
+</div>
+
+<sc-if value="{{modalOpen}}" hint-placeholder-val="{{false}}">
+  <div class="overlay">
+    <button class="backdrop" type="button" aria-label="Fechar" onClick="{{closeBank}}"></button>
+    <div class="mwin" role="dialog" aria-modal="true" aria-labelledby="bank-title">
+      <div class="win-bar"><span>{{mb.type}}</span><button class="close" type="button" aria-label="Fechar" onClick="{{closeBank}}">×</button></div>
+      <div class="m-grid">
+        <div class="m-art {{mm.artCls}}">
+          <div class="fitbox">
+            <sc-for list="{{modeArts}}" as="a" hint-placeholder-count="1">
+              <div class="fig {{a.cls}}" style="aspect-ratio: {{a.r}}; width: min(100cqw, calc(100cqh * {{a.r}}))"><img src="{{a.image}}" alt="{{a.alt}}" style="width: {{a.iw}}%; left: {{a.il}}%; top: {{a.it}}%"></div>
+            </sc-for>
+          </div>
+          <sc-if value="{{mm.hasCredit}}" hint-placeholder-val="{{true}}"><span class="m-credit">ilustração feita por: {{mm.illustrator}}</span></sc-if>
+          <sc-if value="{{mm.multi}}" hint-placeholder-val="{{true}}">
+            <div class="m-ctrl">
+              <button class="rnd" type="button" aria-label="Modo vocal anterior" onClick="{{prevMode}}">←</button>
+              <span class="mono">{{mm.counter}}</span>
+              <button class="rnd" type="button" aria-label="Próximo modo vocal" onClick="{{nextMode}}">→</button>
+            </div>
+          </sc-if>
+        </div>
+        <div class="m-info">
+          <h2 id="bank-title">{{mb.name}}</h2>
+          <div aria-live="polite">
+            <span class="m-ty mono">{{mb.type}}</span>
+            <h3 class="m-title">{{mm.name}}</h3>
+            <p>{{mm.description}}</p>
+          </div>
+          <div><span class="grp-l">Range</span><div class="range-v">{{mm.range}}</div></div>
+          <div><span class="grp-l">Vocal modes</span>
+            <div class="pills" role="group" aria-label="Modo vocal">
+              <sc-for list="{{modeTabs}}" as="m" hint-placeholder-count="1"><button class="mpill" type="button" aria-pressed="{{m.pressed}}" onClick="{{m.pick}}">{{m.name}}</button></sc-for>
+            </div>
+          </div>
+          <sc-if value="{{mb.hasFeatures}}" hint-placeholder-val="{{false}}">
+            <div><span class="grp-l">Features</span><div class="pills"><sc-for list="{{mb.features}}" as="f" hint-placeholder-count="3"><span class="pill">{{f}}</span></sc-for></div></div>
+          </sc-if>
+          <sc-if value="{{mb.isCvc}}" hint-placeholder-val="{{false}}">
+            <div class="notice">
+              <span class="grp-l warn">Aviso!</span>
+              <p>O CVC Mini Boi funciona muito bem com o phonemizer <b>Mini Brapa CVC</b>, para baixar clique nesse <a href="https://github.com/abnormalisotope/MINI-BRAPA-CVC-Phonemizer" target="_blank" rel="noopener noreferrer">Link</a></p>
+            </div>
+          </sc-if>
+          <sc-if value="{{mb.isVccv}}" hint-placeholder-val="{{false}}">
+            <div class="notice">
+              <span class="grp-l warn">Aviso!</span>
+              <p>O <b>VCCV Boi, Purus &amp; Galeroso</b> funcionam muito bem com o <i>phonemizer</i> <b>VCCV BRAPA</b>, para baixar clique nesse <a href="https://github.com/abnormalisotope/MINI-BRAPA-CVC-Phonemizer" target="_blank" rel="noopener noreferrer">Link</a></p>
+              <p>O Resampler <b>Moresampler</b> pode apresentar resultados indesejados ou inesperados ao se utilizar com o <b>VCCV Boi</b></p>
+            </div>
+            <div class="notice">
+              <span class="grp-l">Recomendações:</span>
+              <ul>
+                <li><b>Resamplers:</b> <i>Moresampler</i> (voz nítida, forte); <i>TIPS</i> (voz suave); <i>fresamp</i> (voz anasalada) e <i>HiFiSampler</i> (voz mais natural e realista).</li>
+                <li><b>Phonemizer:</b> <i>VCCV BRAPA</i> (Possibilita um melhor funcionamento e manuseio ao Banco de Voz).</li>
+              </ul>
+            </div>
+          </sc-if>
+          <sc-if value="{{mb.isDs}}" hint-placeholder-val="{{false}}">
+            <div class="notice">
+              <span class="grp-l">Parceria</span>
+              <p>O <b>Kukui DS</b> é feito em parceria com o <b>NeoDIVA</b>. Conheça o projeto: <a href="https://neodiva.xyz/" target="_blank" rel="noopener noreferrer">neodiva.xyz ↗</a></p>
+            </div>
+          </sc-if>
+          <a class="btn-chunk dl" href="{{mb.dlHref}}" target="_blank" rel="noopener noreferrer"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>{{mb.dlLabel}}</a>
+          <div>
+            <span class="grp-l">Demo da voz</span>
+            <p class="m-status" role="status">{{modal.status}}</p>
+            <div class="player">
+              <button class="play" type="button" aria-label="{{modal.playLabel}}" onClick="{{modal.toggle}}" disabled="{{modal.disabled}}"><sc-if value="{{modal.on}}" hint-placeholder-val="{{false}}"><svg class="pp" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg></sc-if><sc-if value="{{modal.off}}" hint-placeholder-val="{{true}}"><svg class="pp" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"></path></svg></sc-if></button>
+              <input class="seek" type="range" min="0" max="1000" value="{{modal.seek}}" onChange="{{seek}}" disabled="{{modal.disabled}}" aria-label="Posição da demo">
+              <span class="time">{{modal.time}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#2160d8","options":["#2160d8","#138f9c","#e8682a"]},"motion":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":900}}'>
+var KB = {
+  boi: './assets/0b12198603a704ca3218bdc6f3de5e97.png', purus: './assets/380a703fef08acd310882a659fb4f56a.png', gal: './assets/8e7eb0ca37c44b16d7e3e2a6441c948f.png',
+  cvc: './assets/63383a7922b11ec49648645485e8f07f.png', cvvc: './assets/5a2b7aee3b8fbd627e133e525d17736b.png', ds: './assets/ab3da7936605a72a25f37d19d1455122.png',
+  iVccv: './assets/3f525d31c0b9fbb8fa58a3067251aac8.png', iCvc: './assets/7aafbc94d14ca37a7cf44e85ea84a3ae.png', iCvvc: './assets/419d2ddbada7614fbad7fb5f9a4213f6.png', iDs: './assets/58de9c5231f0013c8b3a7521b5f8e5b7.png',
+  aBoi: './assets/108f9eca053fad6181b42c1a400868aa.mp4', aPurus: './assets/1b80e87f65f5a4e2fd54abf31c3a3bf7.mp4', aGal: './assets/2d3331a4bd8f3e83f14a3ac0cfa6b860.mp4', aCvc: './assets/3fafac107be034639116d96d9cc59e17.mp4', aDs: './assets/de69e5b457b1bca606e10613c1134993.mp4'
+};
+var W = 8880;
+var KEYS = ['G4','F#4','F4','E4','D#4','D4','C#4','C4','B3','A#3','A3','G#3','G3','F#3','F3','E3','D#3','D3','C#3','C3','B2','A#2','A2','G#2','G2'];
+var TOP_MIDI = 67;
+var REGIONS = [
+  { id: 'inicio', x: 0, w: 3540, word: 'KUKUI' }, { id: 'sobre', x: 3540, w: 1120, word: 'SOBRE' },
+  { id: 'voicebanks', x: 4660, w: 1760, word: 'VOICEBANKS' }, { id: 'termos', x: 6420, w: 1400, word: 'TERMOS' }, { id: 'termos', x: 7820, w: 1060, word: 'A SUA' }
+];
+/* "Mini boi sem coisos.ustx" — faixa "purus" (track 0), sem as harmonias. [posição, duração, tom MIDI, letra] em ticks (480 = 1 tempo), 130 bpm */
+var SONG = [
+  [2880, 480, 50, 'eu'], [3360, 480, 52, 'sou'], [3840, 240, 54, 'um'], [4080, 120, 54, 'mini'], [4200, 120, 52, '+'],
+  [4320, 240, 54, 'boi'], [4560, 120, 52, 'mi ni'], [4680, 120, 52, '+'], [4800, 240, 54, 'boi'], [5040, 240, 59, 'boi'],
+  [5280, 240, 54, 'boi'], [5520, 240, 52, 'boi'], [5760, 240, 50, 'sempri'], [6000, 120, 49, '+'], [6120, 120, 49, 'serei'],
+  [6240, 240, 50, '+'], [6480, 240, 49, 'um'], [6720, 480, 50, 'mi ni'], [7200, 480, 47, '+'], [7680, 1080, 54, 'boi', 1]
+];
+var TICK_PX = 1 / 3, SONG_O = 560, TICKS_PER_SEC = 130 * 480 / 60, AUD_T0 = 0.25, AUD_TICK0 = 2800;
+function tickX(t) { return SONG_O + t * TICK_PX; }
+function audioTick(sec) { return AUD_TICK0 + (sec - AUD_T0) * TICKS_PER_SEC; }
+var SONG_X0 = tickX(2880), SONG_X1 = tickX(8760);
+/* the same melody rendered by each voicebank (demo files) */
+var VOICES = [
+  { id: 'cvc', label: 'CVC', track: 'mini boi', singer: 'KUKUI CVC', src: KB.aCvc },
+  { id: 'boi', label: 'Boi', track: 'boi', singer: 'KUKUI VCCV', src: KB.aBoi },
+  { id: 'purus', label: 'Purus', track: 'purus', singer: 'KUKUI VCCV', src: KB.aPurus },
+  { id: 'galeroso', label: 'Galeroso', track: 'galeroso', singer: 'KUKUI VCCV', src: KB.aGal },
+  { id: 'ds', label: 'DS', track: 'kukui ds', singer: 'KUKUI DS', src: KB.aDs }
+];
+var SONG_NOTES = SONG.map(function (s) { return { x: tickX(s[0]), w: s[1] * TICK_PX - 2, p: TOP_MIDI - s[2], lyric: s[3], vib: !!s[4] }; });
+/* real drawn area of each artwork, measured from its pixels: natural width, top of the drawing, the cut at 55% of its height (waist), and the left/right edges of what is visible above that cut */
+var SLIDES = [
+  { code: 'CVC', disp: 'CVC', img: KB.cvc, W: 1651, top: 16, cut: 1123, x0: 844, x1: 1560, fsK: 0.3 },
+  { code: 'VCCV', disp: 'VCCV', img: KB.boi, W: 1651, top: 36, cut: 1121, x0: 704, x1: 1496, fsK: 0.27 },
+  { code: 'CVVC', disp: 'CVVC', img: KB.cvvc, W: 2592, top: 136, cut: 1658, x0: 552, x1: 2320, fsK: 0.27, dy: 0.07 },
+  { code: 'DiffSinger', disp: 'DiffSinger', img: KB.ds, W: 1379, top: 24, cut: 1131, x0: 284, x1: 928, fsK: 0.16 }
+];
+function fitSlide(s, boxW, boxH) {
+  var vh = s.cut - s.top, vwid = s.x1 - s.x0;
+  var k = Math.min((boxH * 0.97) / vh, (boxW * 0.96) / vwid);
+  return {
+    w: (s.W * k).toFixed(1),
+    l: (boxW / 2 - ((s.x0 + s.x1) / 2) * k).toFixed(1),
+    /* head always just under the ruler; wide art (CVVC) simply shows a bit more body below */
+    t: (boxH * (0.025 + (s.dy || 0)) - s.top * k).toFixed(1),
+    fs: Math.round(Math.min(boxW * s.fsK, 260))
+  };
+}
+var BANKS = [
+  { name: 'CVC Mini Boi', type: 'UTAU / CVC', color: '#226cce', summary: 'Banco de voz simples e funcional.', features: [], icon: KB.iCvc, x: 5240, top: 5,
+    dl: 'Download CVC Mini Boi',
+    modes: [ { name: 'Padrão', image: KB.cvc, box: [1651, 2048, 536, 16, 1024, 2012], audio: KB.aCvc, illustrator: 'Elfthonny', range: 'G2 ~ F4', description: 'Voz masculina jovem de tom médio para OpenUtau. Recomendações: Moresampler e MINI BRAPA CVC Phonemizer.' } ] },
+  { name: 'VCCV Kukui', type: 'UTAU / VCCV', color: '#164f9d', summary: 'Boi, Purus e Galeroso: três expressões vocais.', features: [], icon: KB.iVccv, x: 5820, top: 26,
+    dl: 'Download VCCV Boi, Purus & Galeroso',
+    modes: [
+      { name: 'Boi', image: KB.boi, box: [1651, 2048, 704, 36, 828, 1972], audio: KB.aBoi, illustrator: 'Miucho', range: 'G2 ~ G4', description: 'Voz jovem de tom médio, com fonética mais limpa e nítida. O site oficial recomenda VCCV BRAPA e alerta que Moresampler pode apresentar resultados inesperados neste modo.' },
+      { name: 'Purus', image: KB.purus, box: [1536, 2048, 532, 84, 628, 1924], audio: KB.aPurus, illustrator: 'Miucho', range: 'G2 ~ G4', description: 'Uma voz mais suave e calma. O site oficial recomenda VCCV BRAPA para o banco e indica TIPS para uma voz suave.' },
+      { name: 'Galeroso', image: KB.gal, box: [1447, 2048, 176, 136, 992, 1736], audio: KB.aGal, illustrator: 'Miucho', range: 'G2 ~ G4', description: 'Uma voz mais descolada, compondo as três expressões do banco VCCV. Recomendação do site oficial: VCCV BRAPA.' }
+    ] },
+  { name: 'CVVC Kukui', type: 'UTAU / CVVC', color: '#087caa', summary: 'Kukui em formato CVVC.', features: [], icon: KB.iCvvc, x: 5240, top: 50,
+    dl: 'Download CVVC Kukui',
+    modes: [ { name: 'Padrão', image: KB.cvvc, box: [2592, 3032, 552, 136, 1808, 2768], audio: null, illustrator: 'Widamas', range: null, description: 'CVVC Kukui em seu modo vocal padrão.' } ] },
+  { name: 'Kukui DS', type: 'DIFFSINGER', color: '#425bc4', summary: 'A voz do Kukui para DiffSinger.', features: ['Autopitch', 'BRE', 'DYN', 'GEN', 'TEN', 'VEL', 'VOI'], icon: KB.iDs, x: 5820, top: 71,
+    dl: 'Download Kukui DS',
+    modes: [ { name: 'Padrão', image: KB.ds, box: [1379, 2048, 284, 24, 644, 2012], audio: KB.aDs, illustrator: 'Elfthonny', range: null, description: 'Kukui DS: a versão DiffSinger do projeto, com um modo vocal e controles de expressão.' } ] }
+];
+var TERMS = [
+  { title: 'Propriedade e créditos', body: 'O banco de vozes, o design do personagem, o nome e todos os direitos intelectuais associados pertencem exclusivamente a Markz_505. É opcional creditar o criador nos trabalhos, por exemplo: “Voicebank/Vocal: Kukui”.' },
+  { title: 'Proibições estritas', body: 'É proibida a criação de conteúdo pornográfico, sexualmente explícito ou fetichista envolvendo a voz ou a imagem do personagem. É proibido o uso em conteúdos que retratem ou façam apologia a pedofilia, estupro, abuso sexual ou crimes de natureza violenta. Kukui não pode ser associado a propagandas, partidos, candidatos ou ideologias políticas de qualquer natureza. É proibido promover racismo, homofobia, transfobia, xenofobia ou ataques a grupos específicos.' },
+  { title: 'Conteúdo sugestivo e violência', body: 'Músicas com temas românticos, de flerte ou levemente sugestivas são permitidas, desde que não cruzem a linha para o conteúdo explícito (R-18) e respeitem as proibições estritas. Representações de violência extrema, automutilação ou tortura gráfica são proibidas.' },
+  { title: 'Treinamento de IA', body: 'É estritamente proibido utilizar o banco de voz Kukui, total ou parcialmente, para treinamento, fine-tuning, extração de timbre ou qualquer uso relacionado à inteligência artificial, incluindo RVC, SVC, Diff-Singer ou tecnologias similares, mesmo para fins não comerciais, sem autorização prévia e expressa do criador. Mesmo com autorização, é proibida a distribuição, compartilhamento, venda ou disponibilização pública de modelos, checkpoints, datasets ou áudios gerados por IA que utilizem ou derivem da voz do Kukui, salvo permissão explícita por escrito do criador para essa finalidade.' },
+  { title: 'Uso comercial e monetização', body: 'O uso comercial dos arquivos de áudio e o uso da imagem, nome ou conceito do personagem para fins lucrativos dependem de permissão prévia do criador. Não é permitida a monetização direta de conteúdos que utilizem Kukui em plataformas como YouTube ou Spotify sem autorização expressa do autor.' },
+  { title: 'Redistribuição e contato', body: 'A redistribuição dos arquivos é proibida. Utilize apenas links oficiais. Para solicitar autorização, entre em contato com Markz_505 pelo e-mail kzuta505@gmail.com.' }
+];
+var TERM_X = 7000, TERM_STEP = 60, TERM_W = 340, TERM_BASE = [2, 4, 6, 8, 10, 12], OPEN_ROWS = 9;
+function termP(i, open) { return TERM_BASE[i] + (open >= 0 && i > open ? OPEN_ROWS : 0); }
+function yOf(p) { return (p + 0.5) * 40; }
+/* pitch line through the song notes: short glide into each note, vibrato only where the ustx has it */
+var CURVE = (function () {
+  var n0 = SONG_NOTES[0], d = 'M' + n0.x + ',' + yOf(n0.p).toFixed(1), py = yOf(n0.p), px = n0.x;
+  SONG_NOTES.forEach(function (n) {
+    var y = yOf(n.p), g = Math.min(26, n.w / 3);
+    if (Math.abs(y - py) > 0.1) d += ' C' + (n.x - 6) + ',' + py.toFixed(1) + ' ' + (n.x + g * 0.4) + ',' + y.toFixed(1) + ' ' + (n.x + g) + ',' + y.toFixed(1);
+    var start = n.x + (Math.abs(y - py) > 0.1 ? g : 0), end = n.x + n.w;
+    if (n.vib) {
+      var vs = start + (end - start) * 0.43, x = vs, s = 1;
+      d += ' L' + vs.toFixed(1) + ',' + y.toFixed(1);
+      while (x + 16 <= end) { d += ' Q' + (x + 8) + ',' + (y + 7 * s).toFixed(1) + ' ' + (x + 16) + ',' + y.toFixed(1); x += 16; s = -s; }
+    }
+    d += ' L' + end.toFixed(1) + ',' + y.toFixed(1);
+    py = y; px = end;
+  });
+  return d;
+})();
+var BARS = []; for (var bx = SONG_O; bx < W; bx += 640) BARS.push({ x: bx, n: String((bx - SONG_O) / 640 + 1) });
+/* playhead: starts at 0 on the left, rides to the middle, and reaches the right edge at the end */
+function headScreenX(sx, vw) {
+  var max = Math.max(0, W - vw), half = vw / 2;
+  if (sx < half) return sx;
+  if (sx > max - half) return Math.min(vw - 3, half + (sx - (max - half)));
+  return half;
+}
+function scrollFor(x, vw) { return x < vw ? x / 2 : x - vw / 2; }
+/* box sizes per screen: on narrow screens every window takes one screen width and the pieces of a section sit side by side */
+function layout(cw) {
+  var c = Math.max(240, cw - 24), fit = (w) => Math.min(w, c);
+  if (cw >= 640) {
+    return { compact: false, introX: 60, introW: fit(580), sobreW: fit(600), frameX: 4240, frameW: fit(360), vbW: fit(460), bankW: fit(540), termW: fit(440), ctaW: fit(900), footX: 7880, footTop: 63,
+      bankPos: BANKS.map((b) => [b.x, b.top]), termX: TERM_X, termStep: TERM_STEP, termNoteW: TERM_W, popW: (open) => fit(470), boxL: 690 };
+  }
+  var step = c + 28, b1 = 4720 + step, b2 = b1 + step, tStep = 14;
+  return { compact: true, introX: 14, introW: c, sobreW: c, frameX: 3600 + step, frameW: c, vbW: c, bankW: c, termW: c, ctaW: c, footX: 7880 + step, footTop: 6,
+    bankPos: [[b1, 6], [b2, 6], [b1, 50], [b2, 50]], termX: 6480 + step, termStep: tStep, termNoteW: c - 5 * tStep, popW: (open) => c - open * tStep, boxL: 14 + c + 40 };
+}
+function fmt(n) { return isFinite(n) && n > 0 ? Math.floor(n / 60) + ':' + String(Math.floor(n % 60)).padStart(2, '0') : '0:00'; }
+function stateOf(x, w, ph) { return ph >= x && ph <= x + w ? 'on' : (x + w < ph ? 'past' : ''); }
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { sx: 0, vw: 1200, sh: 700, auto: false, voice: 'cvc', dragging: false, slide: 0, term: 0, termTick: 0, ripples: [], bank: -1, mode: 0, audioKey: null, audioSrc: '', playing: false, t: 0, dur: 0, msg: '' };
+    this.audio = null; this.sc = null; this.rid = 0;
+  }
+  componentDidMount() {
+    this.onVis = () => { if (document.hidden && this.audio) this.audio.pause(); };
+    document.addEventListener('visibilitychange', this.onVis);
+    this.onResize = () => { if (this.sc) this.setState({ vw: this.sc.clientWidth, sh: this.sc.clientHeight, sx: this.sc.scrollLeft }); };
+    window.addEventListener('resize', this.onResize);
+    this.onResize();
+    this.startCycle();
+    /* smooth wheel: the vertical wheel moves the score sideways with easing */
+    this.target = this.sc ? this.sc.scrollLeft : 0;
+    this.onWheelNative = (e) => {
+      var sc = this.sc;
+      if (!sc || Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+      /* let boxes with their own scroll (terms, about text) scroll first */
+      for (var el = e.target; el && el !== sc; el = el.parentElement) {
+        if (el.scrollHeight > el.clientHeight + 1) {
+          var oy = getComputedStyle(el).overflowY;
+          if (oy === 'auto' || oy === 'scroll') {
+            var atTop = el.scrollTop <= 0, atEnd = el.scrollTop + el.clientHeight >= el.scrollHeight - 1;
+            if ((e.deltaY < 0 && !atTop) || (e.deltaY > 0 && !atEnd)) return;
+          }
+        }
+      }
+      e.preventDefault();
+      var max = sc.scrollWidth - sc.clientWidth;
+      var dy = e.deltaMode === 1 ? e.deltaY * 40 : e.deltaY;
+      var base = this.gliding ? this.target : sc.scrollLeft;
+      this.target = Math.max(0, Math.min(max, base + dy * 1.15));
+      if (this.props.motion === false) { sc.scrollLeft = this.target; return; }
+      if (!this.gliding) { this.gliding = true; this.glide(); }
+    };
+    if (this.sc) this.sc.addEventListener('wheel', this.onWheelNative, { passive: false });
+  }
+  glide() {
+    var sc = this.sc;
+    if (!sc) { this.gliding = false; return; }
+    var diff = this.target - sc.scrollLeft;
+    if (Math.abs(diff) < 0.6) { sc.scrollLeft = this.target; this.gliding = false; return; }
+    sc.scrollLeft += diff * 0.12;
+    this.lastSet = sc.scrollLeft;
+    this.glideRaf = requestAnimationFrame(() => this.glide());
+  }
+  playTone(midi) {
+    try {
+      var AC = window.AudioContext || window.webkitAudioContext;
+      this.ac = this.ac || new AC();
+      var ac = this.ac, now = ac.currentTime, o = ac.createOscillator(), g = ac.createGain();
+      o.type = 'triangle';
+      o.frequency.value = 440 * Math.pow(2, (midi - 69) / 12);
+      g.gain.setValueAtTime(0.0001, now);
+      g.gain.exponentialRampToValueAtTime(0.2, now + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, now + 0.9);
+      o.connect(g); g.connect(ac.destination);
+      o.start(now); o.stop(now + 0.95);
+    } catch (err) {}
+  }
+  toggleSong() {
+    var a = this.audio;
+    if (!a) return;
+    if (this.state.audioKey === 'song' && !a.paused) { this.songOn = false; a.pause(); this.setState({ auto: false }); return; }
+    cancelAnimationFrame(this.glideRaf); this.gliding = false;
+    this.songOn = true;
+    this.setState({ auto: true });
+    /* audio starts inside the click (browsers allow it); the view eases in and then locks to the audio — no jump */
+    this.toggleAudio('song', this.voiceSrc());
+    var frames = 0;
+    var loop = () => {
+      if (!this.songOn) return;
+      var au = this.audio, sc = this.sc;
+      if (!au || !sc) return;
+      var desired = Math.max(0, scrollFor(tickX(audioTick(au.currentTime || 0)), sc.clientWidth));
+      var k = this.props.motion === false ? 1 : Math.min(1, 0.08 + frames * 0.015);
+      sc.scrollLeft += (desired - sc.scrollLeft) * k;
+      frames++;
+      if (au.ended) { this.songOn = false; this.setState({ auto: false }); return; }
+      this.lastSet = sc.scrollLeft;
+      this.target = sc.scrollLeft;
+      this.autoRaf = requestAnimationFrame(loop);
+    };
+    cancelAnimationFrame(this.autoRaf);
+    this.autoRaf = requestAnimationFrame(loop);
+  }
+  voiceSrc() { var v = VOICES.filter((x) => x.id === this.state.voice)[0] || VOICES[0]; return v.src; }
+  pickVoice(id) {
+    if (id === this.state.voice) return;
+    var v = VOICES.filter((x) => x.id === id)[0];
+    var a = this.audio;
+    if (!v || !a) { this.setState({ voice: id }); return; }
+    if (this.state.audioKey !== 'song') { this.setState({ voice: id }); return; }
+    /* swap the demo but keep the same point of the song */
+    var at = a.currentTime || 0, wasPlaying = !a.paused;
+    this.switching = true;
+    this.setState({ voice: id, audioSrc: v.src }, () => {
+      var resume = () => {
+        a.removeEventListener('loadedmetadata', resume);
+        try { a.currentTime = Math.min(at, (a.duration || at) - 0.05); } catch (err) {}
+        this.switching = false;
+        if (wasPlaying) a.play().catch(() => {});
+      };
+      a.addEventListener('loadedmetadata', resume);
+      a.load();
+    });
+  }
+  railTo(clientX) {
+    var r = this.railRect, sc = this.sc;
+    if (!r || !sc) return;
+    var f = Math.max(0, Math.min(1, (clientX - r.left) / r.width));
+    var max = sc.scrollWidth - sc.clientWidth;
+    cancelAnimationFrame(this.glideRaf); this.gliding = false;
+    sc.scrollLeft = f * max;
+    this.target = sc.scrollLeft;
+    this.lastSet = sc.scrollLeft;
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer); cancelAnimationFrame(this.raf); cancelAnimationFrame(this.autoRaf); cancelAnimationFrame(this.glideRaf);
+    if (this.sc) this.sc.removeEventListener('wheel', this.onWheelNative);
+    window.removeEventListener('resize', this.onResize);
+    document.removeEventListener('visibilitychange', this.onVis);
+    if (this.audio) this.audio.pause();
+  }
+  startCycle() {
+    clearInterval(this.timer);
+    this.timer = setInterval(() => { if (!document.hidden) this.setState({ slide: (this.state.slide + 1) % SLIDES.length }); }, 3800);
+  }
+  jump(x) {
+    var sc = this.sc;
+    if (!sc) return;
+    this.target = Math.max(0, Math.min(sc.scrollWidth - sc.clientWidth, x - 40));
+    if (this.props.motion === false) { sc.scrollLeft = this.target; return; }
+    if (!this.gliding) { this.gliding = true; this.glide(); }
+  }
+  stopAudio() { if (this.audio) this.audio.pause(); }
+  toggleAudio(key, src) {
+    var a = this.audio;
+    if (!a || !src) return;
+    var fail = () => this.setState({ msg: 'Não foi possível reproduzir a demo.' });
+    if (this.state.audioKey === key) { if (a.paused) a.play().catch(fail); else a.pause(); return; }
+    a.pause();
+    this.setState({ audioKey: key, audioSrc: src, t: 0, dur: 0, msg: '' }, () => { a.load(); a.play().catch(fail); });
+  }
+  playerFor(key, src) {
+    var active = this.state.audioKey === key, on = active && this.state.playing;
+    return {
+      on: on, off: !on, playLabel: on ? 'Pausar demo' : 'Reproduzir demo',
+      seek: active && this.state.dur ? Math.round(this.state.t / this.state.dur * 1000) : 0,
+      time: active && this.state.dur ? fmt(this.state.t) + ' / ' + fmt(this.state.dur) : '0:00 / 0:06',
+      msg: active ? this.state.msg : '', disabled: !src, toggle: () => this.toggleAudio(key, src)
+    };
+  }
+  renderVals() {
+    var st = this.state;
+    var phX = headScreenX(st.sx, st.vw);
+    var ph = st.sx + phX;
+    var still = this.props.motion === false;
+    var vSel = VOICES.filter((x) => x.id === st.voice)[0] || VOICES[0];
+    var open = st.term;
+    var active = null;
+    SONG_NOTES.forEach(function (n) { if (ph >= n.x && ph <= n.x + n.w + 2) active = n; });
+    var songProg = Math.max(0, Math.min(1, (ph - SONG_X0) / (SONG_X1 - SONG_X0)));
+    /* the characters fill the free box to the right of the intro text, top to bottom */
+    var L = layout(st.vw);
+    var boxL = L.boxL, boxT = 26;
+    var boxW = L.compact ? L.introW : Math.max(320, Math.min(st.vw - 16, 1500) - boxL);
+    /* tall tablets: the characters sit under the intro text instead of beside it */
+    if (!L.compact && st.vw < 1100 && st.sh > st.vw && st.sh >= 720) { boxL = 40; boxT = Math.round(st.sh * 0.07 + 350); boxW = st.vw - 80; }
+    var boxH = Math.max(300, st.sh - boxT);
+    var T = TERMS[Math.max(0, open)];
+    var popTop = (termP(Math.max(0, open), open) + 1.25) * 4;
+    var region = REGIONS[0];
+    REGIONS.forEach(function (r) { if (ph >= r.x) region = r; });
+    var go = (x) => (e) => { e.preventDefault(); this.jump(x); };
+    var modalOpen = st.bank >= 0;
+    var B = BANKS[modalOpen ? st.bank : 0];
+    var M = B.modes[Math.min(st.mode, B.modes.length - 1)];
+    var mkey = 'bank:' + st.bank + ':' + st.mode;
+    var modal = this.playerFor(mkey, M.audio);
+    modal.status = !M.audio ? 'Demo em breve.' : (st.audioKey === mkey && st.msg ? st.msg : M.name);
+    var setMode = (m) => { var n = (m + B.modes.length) % B.modes.length; this.stopAudio(); this.setState({ mode: n }); };
+    var prog = Math.min(1, st.sx / Math.max(1, W - st.vw));
+    var inR = (x, w) => (ph >= x && ph <= x + w ? 'on' : '');
+    var nav = { inicio: '', sobre: '', voicebanks: '', termos: '' }; nav[region.id] = 'cur';
+    return {
+      accent: this.props.accent ?? '#2160d8',
+      rootClass: (still ? 'still' : '') + (L.compact ? ' compact' : ''),
+      L: L,
+      nav: nav,
+      W: W, curve: CURVE, curveOffset: (1000 * (1 - songProg)).toFixed(1),
+      progressPct: (prog * 100).toFixed(2), tickPct: Math.max(1.6, Math.min(98.4, prog * 100)).toFixed(2), progressInt: Math.round(prog * 100),
+      phX: phX.toFixed(1),
+      railCls: st.dragging ? 'drag' : '',
+      railDown: (e) => { var el = e.currentTarget; this.railRect = el.getBoundingClientRect(); try { el.setPointerCapture(e.pointerId); } catch (err) {} this.railDrag = true; this.setState({ dragging: true }); this.railTo(e.clientX); },
+      railMove: (e) => { if (this.railDrag) this.railTo(e.clientX); },
+      railUp: () => { this.railDrag = false; this.setState({ dragging: false }); },
+      railKey: (e) => { if (e.key === 'ArrowRight') { e.preventDefault(); this.jump((this.sc ? this.sc.scrollLeft : 0) + 440); } else if (e.key === 'ArrowLeft') { e.preventDefault(); this.jump((this.sc ? this.sc.scrollLeft : 0) - 360); } },
+      voice: { track: vSel.track, singer: vSel.singer },
+      voices: VOICES.map((v) => ({ label: v.label, pressed: String(v.id === vSel.id), pick: () => this.pickVoice(v.id) })),
+      bust: { l: boxL, t: boxT, w: Math.round(boxW), h: Math.round(boxH) },
+      song: { x: SONG_X0 - 8, w: SONG_X1 - SONG_X0 + 16 },
+      songNotes: SONG_NOTES.map((n) => ({ x: n.x.toFixed(1), w: n.w.toFixed(1), top: n.p * 4, lyric: n.lyric, cls: stateOf(n.x, n.w, ph) })),
+      auto: { cls: st.auto ? 'on' : '', on: !!st.auto, off: !st.auto, label: st.auto ? 'Pausar partitura' : 'Reproduzir partitura', pressed: String(st.auto) },
+      toggleAuto: () => this.toggleSong(),
+      lcd: { bar: String(Math.max(1, Math.floor((ph - SONG_O) / 640) + 1)).padStart(3, '0'), pitch: active ? KEYS[active.p] : '--', lyric: active ? active.lyric : region.word.toLowerCase() },
+      keys: KEYS.map((k, i) => ({ name: k, label: (k.indexOf('C') === 0 && k.indexOf('#') < 0) || i === 0 || i === 24 ? k : '', cls: (k.indexOf('#') > 0 ? 'blk ' : '') + (active && active.p === i ? 'on' : ''), play: () => this.playTone(TOP_MIDI - i) })),
+      goInicio: go(0), goSobre: go(L.compact ? 3628 : 3540), goBanks: go(L.compact ? 4748 : 4660), goTermos: go(L.compact ? 6508 : 6420),
+      regions: REGIONS.map((r) => ({ x: r.x, w: r.w, word: r.word, tx: still ? 0 : ((ph - (r.x + r.w / 2)) * 0.18).toFixed(0) })),
+      bars: BARS,
+      setScroller: (el) => { this.sc = el; },
+      onScroll: (e) => { var el = e.currentTarget; if (this.gliding && Math.abs(el.scrollLeft - (this.lastSet ?? el.scrollLeft)) > 3) { cancelAnimationFrame(this.glideRaf); this.gliding = false; } if (!this.gliding && !this.songOn) this.target = el.scrollLeft; if (this.raf) return; this.raf = requestAnimationFrame(() => { this.raf = null; this.setState({ sx: el.scrollLeft, vw: el.clientWidth, sh: el.clientHeight }); }); },
+      onRipple: (e) => {
+        if (still) return;
+        var r = e.currentTarget.getBoundingClientRect(), id = ++this.rid;
+        this.setState({ ripples: this.state.ripples.concat([{ id: id, x: Math.round(e.clientX - r.left), y: Math.round(e.clientY - r.top) }]).slice(-4) });
+        setTimeout(() => this.setState({ ripples: this.state.ripples.filter((x) => x.id !== id) }), 1300);
+      },
+      slides: SLIDES.map((s, i) => { var f = fitSlide(s, boxW, boxH); return { code: s.code, disp: s.disp, img: s.img, w: f.w, l: f.l, t: f.t, fs: f.fs, cls: i === st.slide ? 'on' : '', alt: i === st.slide ? 'Kukui ' + s.code : '' }; }),
+      sobreOn: inR(3540, 1120), banksOn: inR(4660, 600), termsOn: inR(6420, 600),
+      banks: BANKS.map((b, i) => ({ name: b.name, type: b.type, color: b.color, summary: b.summary, icon: b.icon, x: L.bankPos[i][0], top: L.bankPos[i][1], num: '0' + (i + 1), index: '0' + (i + 1) + ' / ' + b.type, tag: b.modes.length === 1 ? 'MODO PADRÃO' : 'BOI / PURUS / GALEROSO', cls: inR(L.bankPos[i][0], L.bankW), open: () => { this.stopAudio(); this.setState({ bank: i, mode: 0, auto: false }); } })),
+      termNotes: TERMS.map((t, i) => { var nx = L.termX + i * L.termStep; return { x: nx, w: L.termNoteW, top: termP(i, open) * 4, n: '0' + (i + 1), title: t.title, expanded: String(i === open), cls: '', pick: () => this.setState({ term: this.state.term === i ? -1 : i, termTick: this.state.termTick + 1 }) }; }),
+      termOpen: open >= 0,
+      pop: { x: L.termX + Math.max(0, open) * L.termStep, w: L.popW(Math.max(0, open)), top: popTop.toFixed(2), h: (OPEN_ROWS * 4 - 2).toFixed(0) },
+      term: { n: '0' + (Math.max(0, open) + 1), title: T.title, body: T.body },
+      termFade: st.termTick === 0 ? '' : (st.termTick % 2 ? 'fade-a' : 'fade-b'),
+      ripples: st.ripples,
+      setAudio: (el) => { this.audio = el; },
+      audioSrc: st.audioSrc || undefined,
+      onTime: (e) => { var a = e.currentTarget; this.setState({ t: a.currentTime || 0, dur: isFinite(a.duration) ? a.duration : 0 }); },
+      onPlay: () => this.setState({ playing: true }),
+      onPause: () => { if (this.switching) return; if (this.state.audioKey === 'song') this.songOn = false; this.setState({ playing: false, auto: this.state.audioKey === 'song' ? false : this.state.auto }); },
+      seek: (e) => { var a = this.audio; if (a && isFinite(a.duration)) a.currentTime = Number(e.target.value) / 1000 * a.duration; },
+      modalOpen: modalOpen,
+      mb: { name: B.name, type: B.type, features: B.features, hasFeatures: B.features.length > 0, isCvc: st.bank === 0, isVccv: st.bank === 1, isDs: st.bank === 3, dlLabel: B.dl, dlHref: st.bank === 3 ? 'https://neodiva.xyz/' : 'https://drive.google.com/file/d/1VDxJGOWeVvK78SvCLzL4pcaGZA0meXGi/view' },
+      modeArts: B.modes.map((m, i) => { var b = m.box; return { image: m.image, r: (b[4] / b[5]).toFixed(4), iw: (b[0] / b[4] * 100).toFixed(2), il: (-b[2] / b[4] * 100).toFixed(2), it: (-b[3] / b[5] * 100).toFixed(2), cls: i === st.mode ? 'on' : '', alt: i === st.mode ? B.name + ' — ' + m.name : '' }; }),
+      mm: { name: M.name, image: M.image, alt: B.name + ' — ' + M.name, description: M.description, range: M.range || 'A informar', illustrator: M.illustrator, hasCredit: !!M.illustrator, counter: M.name + ' · ' + (st.mode + 1) + '/' + B.modes.length, multi: B.modes.length > 1, artCls: B.modes.length > 1 ? '' : 'solo' },
+      modal: modal,
+      modeTabs: B.modes.map((m, i) => ({ name: m.name, pressed: String(i === st.mode), pick: () => setMode(i) })),
+      prevMode: () => setMode(st.mode - 1), nextMode: () => setMode(st.mode + 1),
+      closeBank: () => { this.stopAudio(); this.setState({ bank: -1 }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

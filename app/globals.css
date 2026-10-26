@@ -4326,3 +4326,8 @@ footer { background: #bacb4c; padding: 100px 0 25px; }
   .spotlight-controls > button,
   .spotlight-pagination button { transition: none; }
 }
+
+.kukui-feature-link { margin-top: 42px; padding: 24px 28px; border: 1px solid currentColor; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.kukui-feature-link p { margin: 0; max-width: 58ch; }
+.kukui-feature-link a { font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+@media (max-width: 640px) { .kukui-feature-link { align-items: flex-start; flex-direction: column; padding: 20px; } }
